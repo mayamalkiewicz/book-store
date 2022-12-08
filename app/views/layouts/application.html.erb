@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BookStore</title>
+    <title>Book Store</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,11 +10,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <header>navbar</header>
+  
   <body>
+    <!-- header -->
+    <%= render 'home/header'%>
+
+    <!-- main -->
+    <div class='container'>
     <%= yield %>
+    </div>
+
+    <!-- footer --> 
+    <%= render 'home/footer'%>
   </body>
-  <footer>
-  <p>footer</p>
-  </footer>
+  
 </html>

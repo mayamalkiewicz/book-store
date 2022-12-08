@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+    font-family: 'Roboto';
+    src: url(./Roboto/Roboto-Light.ttf) format('truetype'),
+    src: url(./Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+ * {
+    /*border:rgb(255, 26, 26) 2px solid;*/
+    font-family: Helvetica, Verdana, 'Trebuchet MS', sans-serif;
+    color: seashell;
+    opacity: 1;
+    text-align: center;
+}
+
+ body, html {
+    margin: 0px auto;
+   padding: 0px;
+   font-size: 22px;
+   background-color: rgb(0, 247, 255);
+}
+
