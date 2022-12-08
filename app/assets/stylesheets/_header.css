@@ -1,0 +1,35 @@
+/* -- header -- */
+.header-container {
+    color: rgb(0, 0, 0);
+    position: fixed;
+    overflow: visible;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    top: 0px;
+    background-color: rgb(255, 255, 255);
+    /* border-bottom: 1px solid rgb(255, 0, 144); */
+    height: 80px;
+    align-items: center;
+
+}
+
+.header-logo {
+    margin: 0px 0px 0px 20px;
+    font-size: 30px;
+}
+
+.header-container ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-container ul li {
+    overflow: visible;
+    position: static;
+    margin: 0px 30px;
+    color: grey;
+    font-size: 18px;
+}
+

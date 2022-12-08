@@ -13,24 +13,117 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+
+
+ /* -- BookStore -- */
+/*
  @font-face {
     font-family: 'Roboto';
-    src: url(./Roboto/Roboto-Light.ttf) format('truetype'),
-    src: url(./Roboto/Roboto-Bold.ttf) format('truetype');
-}
+    src: url(/app/assets/fonts/Roboto/) format('truetype'),
+    src: url(/app/assets/fonts/Roboto/) format('truetype');
+}; 
+*/
 
  * {
-    /*border:rgb(255, 26, 26) 2px solid;*/
-    font-family: Helvetica, Verdana, 'Trebuchet MS', sans-serif;
-    color: seashell;
+    font-family: Roboto, Verdana, Arial, sans-serif;
     opacity: 1;
-    text-align: center;
 }
 
- body, html {
+body, html {
     margin: 0px auto;
-   padding: 0px;
-   font-size: 22px;
-   background-color: rgb(0, 247, 255);
+    padding: 0px;
+    font-size: 22px;
+    background-color: rgb(233, 233, 233);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+
+/* -- section 1 -- */
+
+#section-1 {
+    margin: 130px 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    background-color: #00409b;
+    min-height: 700px;
+    color: white;
+}
+
+.section-1-text{
+    width: 300px;
+    width: 300px;
+    margin: auto 0px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid 1px black;
+    justify-content: center;
+}
+
+.sec-1-text ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style: square;
+}
+
+.photo {
+    width: 300px;
+    height: 400px;
+    margin: auto 0px;
+    background-size: cover;
+    padding: 10px;
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* -- section 2 -- */
+#section-2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(211, 211, 211);
+    margin: 50px;
+    gap: 30px;
+    padding: 50px;
+}
+
+.column-left  {
+    max-width: 400px;
+    height: 800px;
+    text-indent: 20px; 
+    overflow: scroll;
+    text-align: justify;
+}
+
+.column-right h6 {
+    max-width: 400px;
+    font-style: italic;
+}
+
+
+/* -- section 3 -- */
+#section-3 {
+    padding: 20px;
+    background-color: aliceblue;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    min-height: 500px;
 }
 
