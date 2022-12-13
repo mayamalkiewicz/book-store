@@ -1,8 +1,8 @@
 <div class="list-page">
 
-<!-- working! -->
+<!-- HTML -->
     
-    
+        <!-- title -->
         <div id="addToDo" class="header">
         <h3>My To Do List</h3>
             <div class="input-area">
@@ -11,19 +11,46 @@
             </div>
         </div>
     
-
-        <ul id="ul-of-tasks">
-            <li class="unchecked">Water the plants</li>
-            <li class="checked">Call to Agnes</li>
-            <li class="unchecked">Pump up the wheels in the car</li>
-            <li class="unchecked">Check the oil in the car</li>
-            <li class="unchecked">Refill windshield washer fluid</li>
-            <li class="unchecked">Take presents</li>
-        </ul>
-        <br>
-        <br>
+        <!-- the list -->
+        <div class="tasks-field">
+            <ul id="ul-of-tasks">
+                <li class="unchecked">
+                    <input type="checkbox" class="chceckBox">
+                    Water the plants
+                    <button class="delBtn">X</button>
+                </li>
+                <li class="checked">
+                    <input checked type="checkbox" class="checkedChceckBox">
+                    Call to Agnes
+                    <button class="delBtn">X</button>
+                </li>
+                <li class="unchecked">
+                    <input type="checkbox" class="chceckBox">
+                    Pump up the wheels in the car
+                    <button class="delBtn">X</button>
+                </li>
+                <li class="unchecked">
+                    <input type="checkbox" class="chceckBox">
+                    Check the oil in the car
+                    <button class="delBtn">X</button>
+                </li>
+                <li class="unchecked">
+                    <input type="checkbox" class="chceckBox">
+                    Refill windshield washer fluid
+                    <button class="delBtn">X</button>      
+                </li>   
+                <li class="unchecked">
+                    <input type="checkbox" class="chceckBox">
+                    Take presents
+                    <button class="delBtn">X</button>      
+                </li>
+            </ul>
+            <br>
+            <br>
+        </div>
+        <!-- remove btn -->
         <div>
-            <input id="rmvBtn" type="button" value="Remove All" onclick="removeAll()">
+            <button class="rmvBtn" type="button" onclick="removeAll()">Remove All</button>
         </div>
     
 
@@ -36,24 +63,55 @@
     
     // Taking a content of a new task by input.
     function addTask() {
+        //add li
         let newLi = document.createElement("li");
-        newLi.innerHTML = txt.value;
-        if (txt.value === "") {
-            alert("Add a task.")
-        } else {
-        ul.appendChild(newLi);
-        //ul.innerHTML += '<li>' + newLi + ' <button onclick="Delete(this);">Delete</button> </li>';
-        txt.value = '';
-        }
+        //add delete button to the new task
+        let delBtn = document.createElement("button");
+        delBtn.className = "delBtn";
+	    delBtn.innerHTML = "X";
+
+        //add checkbox to the new task
+        let chceckBoxItem = document.createElement("input");
+        chceckBoxItem.className = "chceckBox";
+        chceckBoxItem.type = "checkbox"
+
+
+        //add a conditions of adding. If ok, create elements.
+            if (txt.value === "") {
+                alert("Add a task.")
+            } else {
+            newLi.appendChild(chceckBoxItem); //add checkbox
+            ul.appendChild(newLi); //add new <li>
+            newLi.innerHTML += txt.value; //add task text inside the  <li>
+            newLi.appendChild(delBtn); //add delete button
+            txt.value = ""; // remove added text from input box
+            }
+        //run delete button
+        delBtn.addEventListener("click", function(e){
+		e.target.parentNode.remove();
+	    })
     }
 
     // Adding a task to a list.
     btn.addEventListener("click", addTask);
 
-    // Removing one element from list.
-    /*function Delete(currentEl){
-        currentEl.parentNode.parentNode.removeChild(currentEl.parentNode);
-    } */
+    // Add checked mark to the checkbox and when clicking on a task 
+
+    // Delete one element from list.
+    function registerClickHandler (event) {
+    
+        const delBtn = event.target;
+        
+        delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
+    } 
+
+    const deleteBtn = document.querySelectorAll('.delBtn');
+
+    for (let i = 0; i < deleteBtn.length; i++) {
+        deleteBtn[i].addEventListener("click", registerClickHandler, false)
+    };
+
+
 
     // Removing everything from list.
     function removeAll(){
@@ -70,8 +128,12 @@
 <!-- tests -->
 
 
-    
+<script>
 
+
+
+
+</script>
 
 <!-- tests 2 -->
 

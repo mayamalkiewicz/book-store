@@ -3,29 +3,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(209, 22, 22, 0.1);
+    background-color: rgba(22, 209, 190, 0.2);
     min-height: 900px;
-    color: rgb(181, 40, 40);
+    color: rgb(22, 209, 190);
     border-radius: 24px;
     padding: 50px 50px;
     margin: 130px 50px 50px;
+    box-shadow: 5px 5px 5px rgb(182, 182, 182);
 
 }
 
+.tasks-field {
+}
 
-#rmvBtn {
+.delBtn {
+    margin: 10px;
+}
+.rmvBtn {
+    cursor: pointer;
     background: #d9d9d9;
-    display: flex;
-    justify-content: center;
     color: #555;
-    padding: 10px 50px;
+    text-align: center;
     font-size: 16px;
     cursor: pointer;
     border-radius: 12px;
     border:  #d9d9d9 1px solid;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-#rmvBtn:hover {
+.rmvBtn:hover {
+    cursor: pointer;
     background-color: #bbb;
     color: rgb(52, 52, 52);
 }
@@ -36,6 +44,22 @@
     display: flex;
     gap: 10px
   }
+
+.chceckBox {
+    margin: 10px;
+    padding: 0px;
+    width: 12px;
+    cursor: pointer;
+}
+
+.checkedChceckBox {
+    margin: 10px;
+    padding: 0px;
+    width: 12px;
+    cursor: pointer;
+}
+
+
 /* -------------------------------------------- */
 
   /* Remove margins and padding from the list */
@@ -44,32 +68,31 @@
     padding: 0;
   }
   
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   /* Style the list items */
   ul li {
     cursor: pointer;
-    position: relative;
     padding: 12px 8px 12px 40px;
     font-size: 18px;
     transition: 0.2s;
     list-style: none;
-    border-bottom: 1px solid rgb(181, 40, 40);
-  
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    border-radius: 12px;
+    border-bottom: 1px solid rgb(22, 209, 190);
   }
   
-  /* White background-color on tasks */
+  /* Change background-color pointing on tasks */
   ul li:hover {
-    background: rgb(255, 255, 255);
+    background: rgba(22, 209, 190, 0.2);
     border-radius: 12px;
   }
   
-  /* When clicked on, add a background color and strike out text */
+  /* When clicked on, add a background color is darker and strike out text */
   ul li.checked {
-    background: rgb(181, 40, 40, 0.5);
+    background: #d9d9d9;
     color: #fff;
     text-decoration: line-through;
     border-radius: 12px;
@@ -77,7 +100,7 @@
 
   /* When clicked on, and mouse on it darken background color */
   ul li.checked:hover {
-    background: rgb(181, 40, 40, 0.8);
+    background: rgba(22, 209, 190, 0.8);
     color: #fff;
     text-decoration: line-through;
     border-radius: 12px;
@@ -97,34 +120,17 @@
     width: 7px;
   }
   
-  /* Style the close button */
-  .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-  }
-  
-  .close:hover {
-    background-color: #f44336;
-    color: white;
-  }
+
   
   /* Style the header */
   .header {
-    background-color: rgb(181, 40, 40);
+    background-color: rgb(22, 209, 190);
     padding: 30px 80px;
     color: white;
     text-align: center;
     border-radius: 12px;
   }
   
-  /* Clear floats after the header */
-  .header:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
   
   /* Style the input */
   input {
