@@ -1,15 +1,43 @@
-/* to do list */
+.list-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(209, 22, 22, 0.1);
+    min-height: 900px;
+    color: rgb(181, 40, 40);
+    border-radius: 24px;
+    padding: 50px 50px;
+    margin: 130px 50px 50px;
 
-body {
-    margin: 0;
-    min-width: 350px;
+}
+
+
+#rmvBtn {
+    background: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    color: #555;
+    padding: 10px 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    border:  #d9d9d9 1px solid;
+}
+
+#rmvBtn:hover {
+    background-color: #bbb;
+    color: rgb(52, 52, 52);
+}
+
+
+/* Positioning the header of list */
+.input-area {
+    display: flex;
+    gap: 10px
   }
-  
-  /* Include the padding and border in an element's total width and height */
-  * {
-    box-sizing: border-box;
-  }
-  
+/* -------------------------------------------- */
+
   /* Remove margins and padding from the list */
   ul {
     margin: 0;
@@ -21,11 +49,11 @@ body {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
     font-size: 18px;
     transition: 0.2s;
-    
+    list-style: none;
+    border-bottom: 1px solid rgb(181, 40, 40);
+  
     /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -33,21 +61,26 @@ body {
     user-select: none;
   }
   
-  /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
-    background: #f9f9f9;
-  }
-  
-  /* Darker background-color on hover */
+  /* White background-color on tasks */
   ul li:hover {
-    background: #ddd;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
   }
   
   /* When clicked on, add a background color and strike out text */
   ul li.checked {
-    background: #888;
+    background: rgb(181, 40, 40, 0.5);
     color: #fff;
     text-decoration: line-through;
+    border-radius: 12px;
+  }
+
+  /* When clicked on, and mouse on it darken background color */
+  ul li.checked:hover {
+    background: rgb(181, 40, 40, 0.8);
+    color: #fff;
+    text-decoration: line-through;
+    border-radius: 12px;
   }
   
   /* Add a "checked" mark when clicked on */
@@ -78,15 +111,16 @@ body {
   }
   
   /* Style the header */
-  .h {
-    background-color: #f44336;
-    padding: 30px 40px;
+  .header {
+    background-color: rgb(181, 40, 40);
+    padding: 30px 80px;
     color: white;
     text-align: center;
+    border-radius: 12px;
   }
   
   /* Clear floats after the header */
-  .h:after {
+  .header:after {
     content: "";
     display: table;
     clear: both;
@@ -96,28 +130,28 @@ body {
   input {
     margin: 0;
     border: none;
-    border-radius: 0;
+    border-radius: 2px;
     width: 75%;
     padding: 10px;
     float: left;
     font-size: 16px;
+    border-radius: 12px;
   }
   
   /* Style the "Add" button */
   .addBtn {
-    padding: 10px;
-    width: 25%;
     background: #d9d9d9;
     color: #555;
-    float: left;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
-    border-radius: 0;
+    border-radius: 12px;
+    border:  #d9d9d9 1px solid;
+    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
   }
   
   .addBtn:hover {
     background-color: #bbb;
+    border:  #bbb 1px solid;
+    color: rgb(52, 52, 52);
   }
-  

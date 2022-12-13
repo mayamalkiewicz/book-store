@@ -1,1 +1,82 @@
-<h1> Second Page. Here will be probably some list</h1>
+<div class="list-page">
+
+<!-- working! -->
+    
+    
+        <div id="addToDo" class="header">
+        <h3>My To Do List</h3>
+            <div class="input-area">
+                <input type="text" id="txt" placeholder="Add task here.">
+                <button  type="submit" id="btn" class="addBtn">Add</button>
+            </div>
+        </div>
+    
+
+        <ul id="ul-of-tasks">
+            <li class="unchecked">Water the plants</li>
+            <li class="checked">Call to Agnes</li>
+            <li class="unchecked">Pump up the wheels in the car</li>
+            <li class="unchecked">Check the oil in the car</li>
+            <li class="unchecked">Refill windshield washer fluid</li>
+            <li class="unchecked">Take presents</li>
+        </ul>
+        <br>
+        <br>
+        <div>
+            <input id="rmvBtn" type="button" value="Remove All" onclick="removeAll()">
+        </div>
+    
+
+<!-- JS -->
+<script>
+
+    let btn = document.getElementById("btn"); //button
+    let txt = document.getElementById("txt"); //input
+    let ul = document.getElementById("ul-of-tasks"); //list
+    
+    // Taking a content of a new task by input.
+    function addTask() {
+        let newLi = document.createElement("li");
+        newLi.innerHTML = txt.value;
+        if (txt.value === "") {
+            alert("Add a task.")
+        } else {
+        ul.appendChild(newLi);
+        //ul.innerHTML += '<li>' + newLi + ' <button onclick="Delete(this);">Delete</button> </li>';
+        txt.value = '';
+        }
+    }
+
+    // Adding a task to a list.
+    btn.addEventListener("click", addTask);
+
+    // Removing one element from list.
+    /*function Delete(currentEl){
+        currentEl.parentNode.parentNode.removeChild(currentEl.parentNode);
+    } */
+
+    // Removing everything from list.
+    function removeAll(){
+        document.getElementById("ul-of-tasks").innerHTML = "";
+    }
+
+
+
+</script>
+
+
+
+
+<!-- tests -->
+
+
+    
+
+
+<!-- tests 2 -->
+
+
+
+
+<!-- do not remove the div!! -->
+</div>
