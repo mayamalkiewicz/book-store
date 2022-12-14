@@ -40,6 +40,10 @@ a {
     color: rgb(0, 0, 0);
 }
 
+h2 {
+    font-weight: 300;
+}
+
 
 /* -- section 1 -- */
 
@@ -53,8 +57,6 @@ a {
     min-height: 700px;
     color: white;
     border-radius: 24px;
-    border: red 3px solid;
-
 }
 
 .section-1-text{
@@ -68,9 +70,6 @@ a {
     align-items: center;
     background-color: white;
     color: black;
-    border: red 3px solid;
-    
-
 }
 
 .section-1-list {
@@ -88,8 +87,7 @@ a {
     display: flex;
     justify-content: center;
     border-radius: 12px;
-    border: red 3px solid;
-    
+    overflow: hidden;
 }
 
 .style_image {
@@ -136,6 +134,7 @@ a {
     margin: 15px;
     text-align: justify;
     font-style: normal;
+    overflow: scroll;
 }
 
 #quotesContainer:hover {
@@ -162,8 +161,9 @@ a {
     text-align: center;
 }
 
-ul.liHobby {
+ul {
     list-style: none;
+    padding: 0px;
 }
 
 

@@ -13,10 +13,9 @@
     justify-content: space-between;
     top: 0px;
     background-color: rgb(255, 255, 255);
-    /* border-bottom: 1px solid rgb(255, 0, 144); */
     height: 80px;
     align-items: center;
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1); */
+    /* box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1); dislike the look*/ 
 }
 
 .header-logo {
@@ -38,3 +37,6 @@
     font-size: 18px;
 }
 
+.add-shadow {
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1);
+}
