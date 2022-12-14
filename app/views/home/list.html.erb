@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag "_to-do-list", "data-turbo-track": "reload" %>
+<%= stylesheet_link_tag '_to-do-list.css' %>
+<%= stylesheet_link_tag '_header.css' %>
+
+
 <div class="list-page">
 
 <!-- HTML -->
@@ -71,26 +74,6 @@
     const liDoneTask = document.getElementById("taskDone");  //li task done
 
     
-    
-    // Add checked mark to the checkbox and line-through the text when clicking on a task 
-    function checkOrUncheck() {
-        if (inputChecked === true) {
-            liDoneTask.className = "unchecked";
-            
-        }  
-    }
-
-    liNotDoneTask.addEventListener("click", checkOrUncheck, false)
-
-    let list = document.querySelector('ul');
-    list.addEventListener('click', function(ev) {
-        if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
-  }
-}, false);
-
-
-
     // Taking a content of a new task by input.
     function addTask() {
         //add li

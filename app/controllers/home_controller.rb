@@ -5,4 +5,7 @@ class HomeController < ApplicationController
   def list
   end
 
+  def startPage 
+  end
+
 end

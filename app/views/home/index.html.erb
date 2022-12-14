@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag 'application.css' %>
+
+
+
 <!-- Here goes the main page body-->
 
 
@@ -49,7 +53,13 @@
 <section id="section-3">
     
     <div id='container'>
-        <button id='next-button'><%= link_to "Go to To-Do List", home_list_path %></button>
+        <button id='next-button'>
+        <!-- 
+        <a href="/home/list" style="background-color: ;">Go to To-Do List</a>
+         -->
+         <%= link_to "Go to To-Do List", home_list_path %>
+        </button>
+        
     </div>
 
 
@@ -86,7 +96,7 @@ quoteField.addEventListener("click", showQuote);
 
 
 
-// This variable stores the "Mystery Color" button
+// This variable stores the "Go to do-to list" button
 let colorButton = document.getElementById('next-button');
 
 // This random number function will create color codes for the randomColor variable
@@ -94,9 +104,9 @@ function colorValue() {
   return Math.floor(Math.random() * 256);
 }
 
-function colorChange(event){
+function colorChange(){
   let randomColor = 'rgb(' + colorValue() + ',' + colorValue() + ',' + colorValue() + ')';
-  event.target.style.backgroundColor = randomColor;
+  colorButton.style.backgroundColor = randomColor;
 }
 
 

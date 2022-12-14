@@ -7,21 +7,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    
+    <!-- <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> -->
     <%= javascript_importmap_tags %>
     
 
   </head>
-  
-  <body>
+  <body> 
     <!-- header -->
     <%= render 'home/header'%>
 
     <!-- main -->
-    <div class='container'>
-    <%= yield %>
-    </div>
-
+    <main>
+      <%= yield %>
+    </main>
     <!-- footer --> 
     <%= render 'home/footer'%>
   </body>
