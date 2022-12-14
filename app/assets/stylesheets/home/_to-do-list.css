@@ -1,4 +1,5 @@
 
+/* to do list style*/
 
 .list-page {
     display: flex;
@@ -13,9 +14,6 @@
     margin: 130px 50px 50px;
     box-shadow: 5px 5px 5px rgb(205, 205, 205);
 
-}
-
-.tasks-field {
 }
 
 button.delBtn {
@@ -64,13 +62,11 @@ button.delBtn:hover {
     color: white;
 }
 
-
 /* Positioning the header of list */
 .input-area {
     display: flex;
     gap: 10px
   }
-
 
 input[type="checkbox"] {
     width: 18px;
@@ -79,8 +75,6 @@ input[type="checkbox"] {
     border-radius: 2px;
     accent-color: rgb(22, 209, 190);
 }
-
-
 
 .chceckBox {
     margin: 10px;
@@ -96,8 +90,6 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-
-
   /* Remove margins and padding from the list */
   ul {
     margin: 0;
@@ -109,7 +101,6 @@ input[type="checkbox"] {
     justify-content: space-between;
     align-items: center;
   }
-
 
   /* Style the list items */
   .list-page ul li {
@@ -129,38 +120,6 @@ input[type="checkbox"] {
     border-radius: 12px;
   }
   
-  /* When clicked on, add a background color is darker and strike out text */
-  .list-page ul li.checked {
-    background: #d9d9d9;
-    color: #fff;
-    text-decoration: line-through;
-    border-radius: 12px;
-  }
-
-  /* When clicked on, and mouse on it darken background color & line-through*/
-  ul li.checked:hover {
-    background: rgba(22, 209, 190, 0.7);
-    color: #fff;
-    text-decoration: line-through;
-    border-radius: 12px;
-  }
-  
-  /* Add a "checked" mark when clicked on */
-  ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-  }
-  
-
-  
   /* Style the header */
   .header {
     background-color: rgb(22, 209, 190);
@@ -169,7 +128,6 @@ input[type="checkbox"] {
     text-align: center;
     border-radius: 12px;
   }
-  
   
   /* Style the input */
   input {
@@ -192,7 +150,6 @@ input[type="checkbox"] {
     cursor: pointer;
     border-radius: 12px;
     border:  #d9d9d9 1px solid;
-    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2); */
   }
   
   .addBtn:hover {
@@ -201,6 +158,5 @@ input[type="checkbox"] {
     color: rgb(52, 52, 52);
   }
 
-  /* ---------------------------------- test ---------------------------------- */
 
 

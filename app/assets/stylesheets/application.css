@@ -16,23 +16,19 @@
 
 
 
-
-
- /* -- BookStore -- */
-
-
+ /* -- BookStore Home Style-- */
 
 * {
     font-family: Roboto, Verdana, Arial, sans-serif;
     opacity: 1;
     font-weight: 200;
+    border: none;
 }
 
 body, html {
     margin: 0px auto;
     padding: 0px;
     font-size: 22px;
-    background-color: (0, 0, 0, 0.1);
 }
 
 a {
@@ -77,8 +73,6 @@ h2 {
     padding-left: 0px;
 }
 
-
-
 .photo {
     width: 300px;
     height: 400px;
@@ -94,10 +88,6 @@ h2 {
     border-radius: 12px;
     width: 300px;
 }
-
-
-
-
 
 /* -- section 2 -- */
 #section-2 {
@@ -166,7 +156,6 @@ ul {
     padding: 0px;
 }
 
-
 /* -- section 3 -- */
 #section-3 {
     padding: 20px;
@@ -207,7 +196,3 @@ ul {
     border-radius: 12px;
     font-weight: 800;
 }
-
-/* ------------- */
-
-
