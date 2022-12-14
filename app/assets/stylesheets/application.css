@@ -19,18 +19,13 @@
 
 
  /* -- BookStore -- */
-/*
- @font-face {
-    font-family: 'Roboto';
-    src: url(/app/assets/fonts/Roboto/) format('truetype'),
-    src: url(/app/assets/fonts/Roboto/) format('truetype');
-}; 
-*/
 
 
- * {
+
+* {
     font-family: Roboto, Verdana, Arial, sans-serif;
     opacity: 1;
+    font-weight: 200;
 }
 
 body, html {
@@ -58,6 +53,8 @@ a {
     min-height: 700px;
     color: white;
     border-radius: 24px;
+    border: red 3px solid;
+
 }
 
 .section-1-text{
@@ -68,15 +65,20 @@ a {
     flex-direction: column;
     border-radius: 12px;
     justify-content: center;
+    align-items: center;
     background-color: white;
+    color: black;
+    border: red 3px solid;
+    
+
 }
 
-.sec-1-text ul {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    list-style: square;
+.section-1-list {
+    list-style: none;
+    padding-left: 0px;
 }
+
+
 
 .photo {
     width: 300px;
@@ -86,6 +88,8 @@ a {
     display: flex;
     justify-content: center;
     border-radius: 12px;
+    border: red 3px solid;
+    
 }
 
 .style_image {
@@ -156,6 +160,10 @@ a {
     font-style: italic;
 
     text-align: center;
+}
+
+ul.liHobby {
+    list-style: none;
 }
 
 
