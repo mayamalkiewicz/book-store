@@ -9,16 +9,40 @@
     border-radius: 24px;
     padding: 50px 50px;
     margin: 130px 50px 50px;
-    box-shadow: 5px 5px 5px rgb(182, 182, 182);
+    box-shadow: 5px 5px 5px rgb(205, 205, 205);
 
 }
 
 .tasks-field {
 }
 
-.delBtn {
+button.delBtn {
     margin: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    color:rgb(22, 209, 190);
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
 }
+
+button.delBtn:hover {
+    margin: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    background-color:  rgb(22, 209, 190);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
 .rmvBtn {
     cursor: pointer;
     background: #d9d9d9;
@@ -34,8 +58,8 @@
 
 .rmvBtn:hover {
     cursor: pointer;
-    background-color: #bbb;
-    color: rgb(52, 52, 52);
+    background-color: rgb(22, 209, 190);
+    color: white;
 }
 
 
@@ -44,6 +68,17 @@
     display: flex;
     gap: 10px
   }
+
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    accent-color: rgb(22, 209, 190);
+}
+
+
 
 .chceckBox {
     margin: 10px;
@@ -73,10 +108,13 @@
     justify-content: space-between;
     align-items: center;
   }
+
+
   /* Style the list items */
   ul li {
+    min-width: 220px;
     cursor: pointer;
-    padding: 12px 8px 12px 40px;
+    padding: 12px 8px 12px 8px;
     font-size: 18px;
     transition: 0.2s;
     list-style: none;
@@ -98,9 +136,9 @@
     border-radius: 12px;
   }
 
-  /* When clicked on, and mouse on it darken background color */
+  /* When clicked on, and mouse on it darken background color & line-through*/
   ul li.checked:hover {
-    background: rgba(22, 209, 190, 0.8);
+    background: rgba(22, 209, 190, 0.7);
     color: #fff;
     text-decoration: line-through;
     border-radius: 12px;
@@ -161,3 +199,21 @@
     border:  #bbb 1px solid;
     color: rgb(52, 52, 52);
   }
+
+  /* ---------------------------------- test ---------------------------------- */
+
+
+  
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}

@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "_to-do-list", "data-turbo-track": "reload" %>
 <div class="list-page">
 
 <!-- HTML -->
@@ -14,32 +15,32 @@
         <!-- the list -->
         <div class="tasks-field">
             <ul id="ul-of-tasks">
-                <li class="unchecked">
-                    <input type="checkbox" class="chceckBox">
+                <li id="task" class="unchecked">
+                    <input type="checkbox" class="chceckBox" id="chceckBox">
                     Water the plants
                     <button class="delBtn">X</button>
                 </li>
-                <li class="checked">
+                <li id="taskDone" class="checked">
                     <input checked type="checkbox" class="checkedChceckBox">
                     Call to Agnes
                     <button class="delBtn">X</button>
                 </li>
-                <li class="unchecked">
+                <li id="task" class="unchecked">
                     <input type="checkbox" class="chceckBox">
                     Pump up the wheels in the car
                     <button class="delBtn">X</button>
                 </li>
-                <li class="unchecked">
+                <li id="task" class="unchecked">
                     <input type="checkbox" class="chceckBox">
                     Check the oil in the car
                     <button class="delBtn">X</button>
                 </li>
-                <li class="unchecked">
+                <li id="task" class="unchecked">
                     <input type="checkbox" class="chceckBox">
                     Refill windshield washer fluid
                     <button class="delBtn">X</button>      
                 </li>   
-                <li class="unchecked">
+                <li id="task" class="unchecked">
                     <input type="checkbox" class="chceckBox">
                     Take presents
                     <button class="delBtn">X</button>      
@@ -48,6 +49,7 @@
             <br>
             <br>
         </div>
+
         <!-- remove btn -->
         <div>
             <button class="rmvBtn" type="button" onclick="removeAll()">Remove All</button>
@@ -57,10 +59,35 @@
 <!-- JS -->
 <script>
 
-    let btn = document.getElementById("btn"); //button
-    let txt = document.getElementById("txt"); //input
-    let ul = document.getElementById("ul-of-tasks"); //list
+    const btn = document.getElementById("btn"); //button
+    const txt = document.getElementById("txt"); //input
+    const ul = document.getElementById("ul-of-tasks"); //list
+    const inputUnchecked = document.getElementsByClassName("chceckBox"); // input unchecked chceckbox
+    const inputChecked = document.getElementsByClassName("checkedChceckBox"); // input checked chceckbox
+    const liNotDoneTask = document.getElementById("task"); // li task NOT done
+    const liDoneTask = document.getElementById("taskDone");  //li task done
+
     
+    
+    // Add checked mark to the checkbox and line-through the text when clicking on a task 
+    function checkOrUncheck() {
+        if (inputChecked === true) {
+            liDoneTask.className = "unchecked";
+            
+        }  
+    }
+
+    liNotDoneTask.addEventListener("click", checkOrUncheck, false)
+
+    let list = document.querySelector('ul');
+    list.addEventListener('click', function(ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+  }
+}, false);
+
+
+
     // Taking a content of a new task by input.
     function addTask() {
         //add li
@@ -95,7 +122,6 @@
     // Adding a task to a list.
     btn.addEventListener("click", addTask);
 
-    // Add checked mark to the checkbox and when clicking on a task 
 
     // Delete one element from list.
     function registerClickHandler (event) {
@@ -105,7 +131,7 @@
         delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
     } 
 
-    const deleteBtn = document.querySelectorAll('.delBtn');
+    const deleteBtn = document.querySelectorAll(".delBtn");
 
     for (let i = 0; i < deleteBtn.length; i++) {
         deleteBtn[i].addEventListener("click", registerClickHandler, false)
@@ -128,12 +154,8 @@
 <!-- tests -->
 
 
-<script>
 
 
-
-
-</script>
 
 <!-- tests 2 -->
 
