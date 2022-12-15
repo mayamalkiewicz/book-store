@@ -4,7 +4,7 @@
 <div class="list-page">
 
 <!-- HTML -->
-    
+    <div class="the-to-do-list-fiels">
         <!-- title -->
         <div id="addToDo" class="header">
         <h3>My To Do List</h3>
@@ -17,19 +17,11 @@
         <!-- the list -->
         <div class="tasks-field">
             <ul id="ul-of-tasks">
-                <li id="task" class="unchecked">
+                <li id="task" class="unchecked first-child">
                     <input type="checkbox" class="chceckBox" id="chceckBox">
                     Water the plants
                     <button class="delBtn">x</button>
                 </li>
-
-                <!-- 
-                <li id="taskDone" class="checked">
-                    <input checked type="checkbox" class="checkedChceckBox">
-                    Call to Agnes
-                    <button class="delBtn">X</button>
-                </li>
-                -->
                 <li id="task" class="unchecked">
                     <input type="checkbox" class="chceckBox">
                     Pump up the wheels in the car
@@ -45,7 +37,7 @@
                     Refill windshield washer fluid
                     <button class="delBtn">x</button>      
                 </li>   
-                <li id="task" class="unchecked">
+                <li id="task" class="unchecked last-child">
                     <input type="checkbox" class="chceckBox">
                     Take presents
                     <button class="delBtn">x</button>      
@@ -54,11 +46,12 @@
             <br>
             <br>
         </div>
-
+     
         <!-- remove btn -->
-        <div>
+        <div class="rmv-btn-class">
             <button class="rmvBtn" type="button" onclick="removeAll()">Remove All</button>
         </div>
+    </div>
 </div>
 
 

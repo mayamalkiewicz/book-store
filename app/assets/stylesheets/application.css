@@ -38,6 +38,7 @@ a {
 
 h2 {
     font-weight: 300;
+    text-align: center;
 }
 
 
@@ -111,6 +112,10 @@ h2 {
 
 .column-left p {
     padding: 0px 15px;
+}
+
+.section-2.column-left h2 {
+    text-align: center;
 }
 
 #quotesContainer {

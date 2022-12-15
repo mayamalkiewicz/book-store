@@ -1,21 +1,76 @@
+/* --- to do list style --- */
 
-/* to do list style*/
 
+
+/* --- section with to-do list --- */
 .list-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: rgba(22, 209, 190, 0.2);
-    min-height: 900px;
-    color: rgb(22, 209, 190);
+    min-height: 700px;
     border-radius: 24px;
-    padding: 50px 50px;
+    padding: 50px;
     margin: 130px 50px 50px;
     box-shadow: 5px 5px 5px rgb(205, 205, 205);
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
 }
 
+.the-to-do-list-field {
+  
+}
+
+
+/* --- input --- */
+
+/* Style the header */
+.header {
+  background-color: rgb(22, 209, 190);
+  padding: 30px 100px;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* Style the input */
+.input-area input {
+  border: none;
+  border-radius: 2px;
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  gap: 10px
+}
+
+/* "Add" button */
+.addBtn {
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  border:  #d9d9d9 1px solid;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+  border:  #bbb 1px solid;
+  color: rgb(52, 52, 52);
+}
+
+
+/* --- tasks --- */
+
+
+/* delete button */
 button.delBtn {
     margin: 10px;
     cursor: pointer;
@@ -43,120 +98,80 @@ button.delBtn:hover {
     color: white;
 }
 
-.rmvBtn {
-    cursor: pointer;
-    background: #d9d9d9;
-    color: #555;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    border:  #d9d9d9 1px solid;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.rmvBtn:hover {
-    cursor: pointer;
-    background-color: rgb(22, 209, 190);
-    color: white;
-}
-
-/* Positioning the header of list */
-.input-area {
-    display: flex;
-    gap: 10px
-  }
-
-input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    border: 2px solid currentColor;
-    border-radius: 2px;
-    accent-color: rgb(22, 209, 190);
-}
-
+/* chceckBox */
 .chceckBox {
     margin: 10px;
     padding: 0px;
-    width: 12px;
     cursor: pointer;
+    border: none;
 }
 
 .checkedChceckBox {
     margin: 10px;
     padding: 0px;
-    width: 12px;
     cursor: pointer;
 }
 
-  /* Remove margins and padding from the list */
-  ul {
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  accent-color: rgb(22, 209, 190);
+}
+
+/* list of tasks */
+/* Remove margins and padding from the list */
+.list-page ul {
     margin: 0;
-    padding: 0;
-  }
-  
-  li {
+    padding: 0px;
+}
+
+/* Style the list items */
+.list-page ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  /* Style the list items */
-  .list-page ul li {
     min-width: 220px;
     cursor: pointer;
-    padding: 12px 8px 12px 8px;
     font-size: 18px;
     transition: 0.2s;
     list-style: none;
     border-radius: 12px;
     background-color: rgba(255, 255, 255, 0.5);
-  }
+    overflow: scroll;
+
+}
   
-  /* Change background-color pointing on tasks */
-  .list-page ul li:hover {
+/* Change background-color pointing on tasks */
+.list-page ul li:hover {
     background: rgba(22, 209, 190, 0.2);
     border-radius: 12px;
-  }
-  
-  /* Style the header */
-  .header {
-    background-color: rgb(22, 209, 190);
-    padding: 30px 80px;
-    color: white;
-    text-align: center;
-    border-radius: 12px;
-  }
-  
-  /* Style the input */
-  input {
-    margin: 0;
-    border: none;
-    border-radius: 2px;
-    width: 75%;
-    padding: 10px;
-    float: left;
-    font-size: 16px;
-    border-radius: 12px;
-  }
-  
-  /* Style the "Add" button */
-  .addBtn {
-    background: #d9d9d9;
-    color: #555;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 12px;
-    border:  #d9d9d9 1px solid;
-  }
-  
-  .addBtn:hover {
-    background-color: #bbb;
-    border:  #bbb 1px solid;
-    color: rgb(52, 52, 52);
-  }
+}
 
 
+/* --- remove button --- */
 
+.rmv-btn-class {
+  display: flex;
+  justify-content: center;
+}
+
+.rmvBtn {
+  cursor: pointer;
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  border:  #d9d9d9 1px solid;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.rmvBtn:hover {
+  cursor: pointer;
+  background-color: rgb(22, 209, 190);
+  color: white;
+}
