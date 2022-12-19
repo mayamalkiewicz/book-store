@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # Defines the root path route ("/")
   root 'home#index'
 
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
   get 'home/list'
 
   
+
 end
