@@ -1,29 +1,26 @@
 // to-do list JS
 
-
-const btn = document.getElementById("btn"); //button
-const txt = document.getElementById("txt"); //input
-const ul = document.getElementById("ul-of-tasks"); //list
-const inputUnchecked = document.getElementsByClassName("chceckBox"); // input unchecked chceckbox
-const inputChecked = document.getElementsByClassName("checkedChceckBox"); // input checked chceckbox
-const liNotDoneTask = document.getElementById("task"); // li task NOT done
-const liDoneTask = document.getElementById("taskDone");  //li task done
+const btn = document.getElementById("btn");
+const txt = document.getElementById("txt");
+const ul = document.getElementById("ul-of-tasks");
+const inputUnchecked = document.getElementsByClassName("chceck-box");
+const inputChecked = document.getElementsByClassName("checkedChceckBox");
+const liNotDoneTask = document.getElementById("task"); 
+const liDoneTask = document.getElementById("taskDone");
 
 // Taking a content of a new task by input.
 function addTask() {
-    //add li
-    let newLi = document.createElement("li");
-    //add delete button to the new task
-    let delBtn = document.createElement("button");
-    delBtn.className = "delBtn";
+    let newLi = document.createElement("li"); //add li
+    let delBtn = document.createElement("button"); //add delete button to the new task
+    delBtn.className = "del-btn";
     delBtn.innerHTML = "X";
 
     //add checkbox to the new task
     let chceckBoxItem = document.createElement("input");
-    chceckBoxItem.className = "chceckBox";
+    chceckBoxItem.className = "chceck-box";
     chceckBoxItem.type = "checkbox"
 
-    //add a conditions of adding. If ok, create elements.
+    //add a conditions of adding. If true, create elements.
         if (txt.value === "") {
             alert("Add a task.")
         } else {
@@ -50,7 +47,7 @@ function registerClickHandler (event) {
     delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
 } 
 
-const deleteBtn = document.querySelectorAll(".delBtn");
+const deleteBtn = document.querySelectorAll(".del-btn");
 
 for (let i = 0; i < deleteBtn.length; i++) {
     deleteBtn[i].addEventListener("click", registerClickHandler, false)

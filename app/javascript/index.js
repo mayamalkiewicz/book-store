@@ -9,8 +9,8 @@ let loremIpsums = ["Cursus euismod quis viverra nibh. Faucibus pulvinar elementu
     "Suspendisse pellentesque feugiat blandit."
 ]
 
-let quoteField = document.getElementById("quotesContainer");
-let quote = document.getElementById("quoteView");
+let quoteField = document.getElementById("quotes-container");
+let quote = document.getElementById("quote-view");
 
 function quoteSelector(){
     let randomQuote = Math.floor(Math.random() * loremIpsums.length);
@@ -24,7 +24,6 @@ function showQuote(){
 }
 
 quoteField.addEventListener("click", showQuote);
-
 
 // section 3
 

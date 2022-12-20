@@ -1,7 +1,5 @@
 /* --- to do list style --- */
 
-
-
 /* --- section with to-do list --- */
 .list-page {
     background-color: rgba(22, 209, 190, 0.2);
@@ -19,7 +17,6 @@
 .the-to-do-list-field {
   
 }
-
 
 /* --- input --- */
 
@@ -50,7 +47,7 @@
 }
 
 /* "Add" button */
-.addBtn {
+.add-btn {
   background: #d9d9d9;
   color: #555;
   text-align: center;
@@ -60,18 +57,16 @@
   border:  #d9d9d9 1px solid;
 }
 
-.addBtn:hover {
+.add-btn:hover {
   background-color: #bbb;
   border:  #bbb 1px solid;
   color: rgb(52, 52, 52);
 }
 
-
 /* --- tasks --- */
 
-
 /* delete button */
-button.delBtn {
+button.del-btn {
     margin: 10px;
     cursor: pointer;
     width: 18px;
@@ -85,7 +80,7 @@ button.delBtn {
     border-radius: 5px;
 }
 
-button.delBtn:hover {
+button.del-btn:hover {
     margin: 10px;
     cursor: pointer;
     width: 18px;
@@ -98,8 +93,8 @@ button.delBtn:hover {
     color: white;
 }
 
-/* chceckBox */
-.chceckBox {
+/* chceck-box */
+.chceck-box {
     margin: 10px;
     padding: 0px;
     cursor: pointer;
@@ -121,6 +116,7 @@ input[type="checkbox"] {
 }
 
 /* list of tasks */
+
 /* Remove margins and padding from the list */
 .list-page ul {
     margin: 0;
@@ -157,7 +153,7 @@ input[type="checkbox"] {
   justify-content: center;
 }
 
-.rmvBtn {
+.rmv-btn {
   cursor: pointer;
   background: #d9d9d9;
   color: #555;
@@ -170,7 +166,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.rmvBtn:hover {
+.rmv-btn:hover {
   cursor: pointer;
   background-color: rgb(22, 209, 190);
   color: white;
