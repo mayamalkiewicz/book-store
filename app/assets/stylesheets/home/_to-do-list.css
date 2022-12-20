@@ -2,20 +2,19 @@
 
 /* --- section with to-do list --- */
 .list-page {
-    background-color: rgba(22, 209, 190, 0.2);
-    min-height: 700px;
-    border-radius: 24px;
-    padding: 50px;
-    margin: 130px 50px 50px;
-    box-shadow: 5px 5px 5px rgb(205, 205, 205);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: scroll;
+  background-color: rgba(22, 209, 190, 0.2);
+  min-height: 700px;
+  border-radius: 24px;
+  padding: 50px;
+  margin: 130px 50px 50px;
+  box-shadow: 5px 5px 5px rgb(205, 205, 205);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
 }
 
 .the-to-do-list-field {
-  
 }
 
 /* --- input --- */
@@ -43,7 +42,7 @@
 .input-area {
   display: flex;
   justify-content: center;
-  gap: 10px
+  gap: 10px;
 }
 
 /* "Add" button */
@@ -54,12 +53,12 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 12px;
-  border:  #d9d9d9 1px solid;
+  border: #d9d9d9 1px solid;
 }
 
 .add-btn:hover {
   background-color: #bbb;
-  border:  #bbb 1px solid;
+  border: #bbb 1px solid;
   color: rgb(52, 52, 52);
 }
 
@@ -67,44 +66,44 @@
 
 /* delete button */
 button.del-btn {
-    margin: 10px;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    justify-content: center;
-    border: none;
-    color:rgb(22, 209, 190);
-    font-weight: bold;
-    background-color: white;
-    border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  color: rgb(22, 209, 190);
+  font-weight: bold;
+  background-color: white;
+  border-radius: 5px;
 }
 
 button.del-btn:hover {
-    margin: 10px;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    justify-content: center;
-    background-color:  rgb(22, 209, 190);
-    border: none;
-    border-radius: 5px;
-    color: white;
+  margin: 10px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(22, 209, 190);
+  border: none;
+  border-radius: 5px;
+  color: white;
 }
 
-/* chceck-box */
-.chceck-box {
-    margin: 10px;
-    padding: 0px;
-    cursor: pointer;
-    border: none;
+/* check-box */
+.check-box {
+  margin: 10px;
+  padding: 0px;
+  cursor: pointer;
+  border: none;
 }
 
 .checkedChceckBox {
-    margin: 10px;
-    padding: 0px;
-    cursor: pointer;
+  margin: 10px;
+  padding: 0px;
+  cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -119,32 +118,30 @@ input[type="checkbox"] {
 
 /* Remove margins and padding from the list */
 .list-page ul {
-    margin: 0;
-    padding: 0px;
+  margin: 0;
+  padding: 0px;
 }
 
 /* Style the list items */
 .list-page ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 220px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.2s;
-    list-style: none;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
-    overflow: scroll;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 220px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s;
+  list-style: none;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: scroll;
 }
-  
+
 /* Change background-color pointing on tasks */
 .list-page ul li:hover {
-    background: rgba(22, 209, 190, 0.2);
-    border-radius: 12px;
+  background: rgba(22, 209, 190, 0.2);
+  border-radius: 12px;
 }
-
 
 /* --- remove button --- */
 
@@ -161,7 +158,7 @@ input[type="checkbox"] {
   font-size: 16px;
   cursor: pointer;
   border-radius: 12px;
-  border:  #d9d9d9 1px solid;
+  border: #d9d9d9 1px solid;
   padding: 10px 20px;
   cursor: pointer;
 }
