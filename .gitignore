@@ -35,3 +35,19 @@
 
 # Ignore sqlite3.
 /db/development.sqlite3
+
+# Ignore .keep files.
+!/app/assets/images/.keep
+!/app/controllers/concerns/.keep
+!/app/models/concerns/.keep
+!/lib/assets/.keep
+!/lib/tasks/.keep
+!/storage/.keep
+!/test/controllers/.keep
+!/test/fixtures/files/.keep
+!/test/integration/.keep
+!/test/mailers/.keep
+!/test/models/.keep
+!/test/system/.keep
+!/vendor/.keep
+!/vendor/javascript/.keep

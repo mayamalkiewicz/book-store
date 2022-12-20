@@ -48,9 +48,9 @@ function registerClickHandler(event) {
 
 const deleteBtn = document.querySelectorAll(".del-btn");
 
-for (let i = 0; i < deleteBtn.length; i++) {
-  deleteBtn[i].addEventListener("click", registerClickHandler, false);
-}
+deleteBtn.forEach(function(btn) {
+  btn.addEventListener("click", registerClickHandler, false);
+});
 
 // Removing everything from list.
 function removeAll() {
