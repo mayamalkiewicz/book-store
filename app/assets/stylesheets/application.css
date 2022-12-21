@@ -10,6 +10,195 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
+ *= require_tree ./application
  *= require_self
  */
+
+/* -- BookStore Home Style-- */
+
+* {
+  font-family: Roboto, Verdana, Arial, sans-serif;
+  opacity: 1;
+  font-weight: 200;
+  border: none;
+}
+
+body,
+html {
+  margin: 0px auto;
+  padding: 0px;
+  font-size: 22px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+h2 {
+  font-weight: 300;
+  text-align: center;
+}
+
+/* -- section 1 -- */
+
+#section-1 {
+  margin: 130px 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  background-color: rgba(0, 0, 0, 0.1);
+  min-height: 700px;
+  color: white;
+  border-radius: 24px;
+}
+
+.section-1-text {
+  width: 300px;
+  margin: auto 0px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+}
+
+.section-1-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.photo {
+  width: 300px;
+  height: 400px;
+  margin: auto 0px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.style_image {
+  border-radius: 12px;
+  width: 300px;
+}
+
+/* -- section 2 -- */
+
+#section-2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 50px;
+  gap: 30px;
+  padding: 50px;
+  border-radius: 24px;
+}
+
+.column-left {
+  max-width: 400px;
+  height: 800px;
+  text-indent: 20px;
+  overflow: scroll;
+  text-align: justify;
+}
+
+.column-left p {
+  padding: 0px 15px;
+}
+
+.section-2.column-left h2 {
+  text-align: center;
+}
+
+#quotes-container {
+  min-width: 30px;
+  min-height: 20px;
+  padding: 10px;
+  background-color: rgb(247, 247, 247);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 15px;
+  text-align: justify;
+  font-style: normal;
+  overflow: scroll;
+}
+
+#quotes-container:hover {
+  min-width: 30px;
+  min-height: 20px;
+  padding: 10px;
+  background-color: rgb(239, 239, 239);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 15px;
+  text-align: justify;
+  font-style: normal;
+}
+
+#quote-view {
+  min-width: 200px;
+}
+
+.column-right h6 {
+  max-width: 400px;
+  font-style: italic;
+
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+/* -- section 3 -- */
+
+#section-3 {
+  padding: 20px;
+  border-radius: 24px;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  min-height: 500px;
+}
+
+#next-button {
+  width: 350px;
+  height: 100px;
+  padding: 20px;
+  border: none;
+  font-size: 24px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+#next-button:hover {
+  width: 350px;
+  height: 100px;
+  padding: 20px;
+  border: none;
+  font-size: 24px;
+  background-color: #c6c6c6;
+  color: rgb(0, 0, 0);
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  font-weight: 800;
+}

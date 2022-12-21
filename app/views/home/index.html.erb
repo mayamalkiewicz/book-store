@@ -1,0 +1,62 @@
+<!-- The main page body-->
+
+<div class="home">
+
+  <!-- section 1 --> 
+  <section id="section-1">
+    <div class="section-1-text">
+      <h2>ABOUT ME</h2>
+        <ul class="section-1-list">
+          <li>Name: Maja</li>
+          <li>City: Warsaw</li>
+          <li>Gender: female</li>
+        </ul>
+    </div>
+      <div class="photo">
+        <%= image_tag("img", :class => "style_image") %>
+      </div>
+  </section>
+
+  <!-- section 2 --> 
+  <section id="section-2">
+    <div class='column-left'>
+      <h2>Lorem Ipsum</h2>
+      <h6 id="quotes-container">
+      <p id="quote-view">Show quote.</p>
+      </h6>
+      <div id="lorem-ipsum-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit, sapien at porta molestie, elit dolor porta purus, at volutpat nisl leo non libero. Etiam tempus nec nisi ut volutpat. Cras eu sem facilisis, feugiat ante auctor, pellentesque ligula. Maecenas et orci lectus. Suspendisse pellentesque feugiat blandit. Vestibulum ultrices nulla euismod risus gravida volutpat. Maecenas neque augue, aliquet eget est nec, vehicula congue eros. Curabitur lacinia pretium nunc, sit amet pellentesque turpis ultricies id. Fusce quis felis vulputate, rhoncus odio et, semper nibh. Etiam lacinia, arcu eu commodo euismod, quam est fringilla massa, vitae pulvinar sem odio a tellus. Vestibulum vitae dui fringilla, condimentum velit in, placerat odio. Cras dolor arcu, elementum in est vitae, lobortis gravida massa. Cras ac tellus id est pulvinar lobortis.</p>
+                
+        <p>Vivamus posuere nisi justo. Morbi quis arcu maximus risus facilisis tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed ut lorem at justo condimentum mollis. Nullam justo massa, lobortis ut consectetur vel, interdum at sapien. Morbi venenatis in massa in vulputate. Duis eu nulla lacinia, pharetra metus non, bibendum libero. Morbi leo dui, sagittis ut metus non, lobortis consectetur leo. In elementum, purus pellentesque efficitur placerat, ipsum felis varius tellus, ac rhoncus ante lorem sit amet massa. Nullam at placerat magna. Nunc hendrerit felis a nibh interdum eleifend. Duis sed pulvinar nisi. Ut in iaculis libero. Aenean vel velit non ipsum interdum venenatis. Integer cursus odio nec enim pulvinar sagittis.</p>
+            
+        <p>Fusce mattis blandit nibh non ultrices. Fusce sed lacinia elit, a condimentum odio. Praesent varius ultrices eros, condimentum ultricies arcu lobortis ut. Phasellus tincidunt tristique elementum. Nulla laoreet gravida est, sed iaculis ex ultrices id. Sed sollicitudin eu risus sed volutpat. Suspendisse potenti. Nulla ultrices ipsum eget commodo mollis.</p>
+      </div>
+    </div>
+    <div class='column-right'>
+      <h2>Hobbies:</h2>
+      <ul class="hobby-list">
+        <li id="li-hobby">Architecture</li>
+        <li id="li-hobby">Catan</li>
+        <li id="li-hobby">Moutains hiking</li>
+        <li id="li-hobby">Programming</li>
+        <li id="li-hobby">Skiing</li>
+        <li id="li-hobby">Swimming</li>
+        <li id="li-hobby">SUP</li>
+        <li id="li-hobby">Traveling</li>
+        <li id="li-hobby">Yoga</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- section 3 --> 
+  <section id="section-3">
+    <div id='container'>
+      <button id='next-button'>
+        <%= link_to "Go to To-Do List", home_list_path %>
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<%= javascript_include_tag "index" %>

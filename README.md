@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Hello! This is the LLI Internship Project phase-1.
 
-* Ruby version
+Intention of this task is to create the basic web page using HTML, CSS and JS in Ruby On Rails structure.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The web-page include some basic information about me like personal info or hobbies and the exercise of to-do list. Beside of the to-do list, every aspect of page should contain some JS interactivity.
