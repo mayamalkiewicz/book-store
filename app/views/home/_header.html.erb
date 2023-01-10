@@ -1,14 +1,13 @@
 <!-- header -->
-
-<header class="header-container">
-  <p class="header-logo">
-    <%= link_to "BOOK STORE", root_path %>
+<header class='header-container'>
+  <p class='header-logo'>
+    <%= link_to 'BOOK STORE', root_path(anchor: "section-1") %>
   </p>
   <ul id="list-header">
-    <li><a href="http://localhost:3000/#section-1">About Me</a></li>
-    <li><a href="http://localhost:3000/#section-2">Lorem Ipsum</a></li>
-    <li><a href="http://localhost:3000/#section-3">To-Do List</a></li>
+    <%= link_to 'About Me', root_path(anchor: "section-1"), class: 'font-light py-2 px-5' %>
+    <%= link_to 'Lorem Ipsum', root_path(anchor: "section-2"), class: 'font-light py-2 px-5' %>
+    <%= link_to 'To-Do List', root_path(anchor: "section-3"), class: 'font-light py-2 px-5' %>
+    <%= link_to 'Users', users_path, class: 'font-light py-2 px-5' %>
   </ul>
 </header>
-
-<%= javascript_include_tag "header" %>
+<%= javascript_include_tag 'header' %>

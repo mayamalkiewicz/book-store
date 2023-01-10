@@ -51,3 +51,4 @@
 !/test/system/.keep
 !/vendor/.keep
 !/vendor/javascript/.keep
+!/app/assets/builds/.keep

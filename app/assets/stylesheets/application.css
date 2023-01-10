@@ -15,7 +15,6 @@
  *= require_self
  */
 
-/* -- BookStore Home Style-- */
 
 * {
   font-family: Roboto, Verdana, Arial, sans-serif;
@@ -49,7 +48,6 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 60px;
-  background-color: rgba(0, 0, 0, 0.1);
   min-height: 700px;
   color: white;
   border-radius: 24px;
@@ -95,7 +93,6 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
   margin: 50px;
   gap: 30px;
   padding: 50px;
@@ -166,7 +163,6 @@ ul {
 #section-3 {
   padding: 20px;
   border-radius: 24px;
-  background-color: rgba(0, 0, 0, 0.1);
   display: flex;
   flex-flow: column;
   justify-content: center;

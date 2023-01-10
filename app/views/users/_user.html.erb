@@ -1,0 +1,31 @@
+<div id="<%= dom_id user %>" class= "mx-auto md:w-2/3 w-full mb-12 ">
+  <div class="bg-gray-100 rounded-3xl py-6 mb-4 mt-12">
+    <p class="my-5">
+      <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Email:</strong>
+      <br>
+      <span class="ml-5"><%= user.email %></span>
+    </p>
+    <p class="my-5">
+      <strong class="rounded-xl py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Nick name:</strong>
+      <br>
+      <span class="ml-5"><%= user.nick_name %></span>
+    </p>
+    <p class="my-5">
+      <strong class="rounded-xl py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Date of birth:</strong>
+      <br>
+      <span class="ml-5"><%= user.date_of_birth %></span>
+    </p>
+    <p class="my-5">
+      <strong class="rounded-xl py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Description:</strong>
+      <br>
+      <span class="ml-5"><%= user.description %></span>
+    </p>
+    <div class="flex justify-start">
+      <% if action_name != "show" %>
+        <%= link_to "Show this user", user, class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4" %>
+        <%= link_to 'Edit this user', edit_user_path(user), class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 ml-2 px-5 bg-white inline-block font-medium" %>
+        <hr class="mt-6">
+      <% end %>
+    </div>
+  </div>
+</div>
