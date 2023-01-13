@@ -16,11 +16,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
-    unless params[:user][:password] == params[:user][:password_confirmation]
-      @user.errors.add(:password, 'do NOT match password_confirmation')
-      return render :new, status: :unprocessable_entity
-  end
-
     if @user.save
       redirect_to user_url(@user), notice: 'User was successfully created.'
     else
@@ -52,6 +47,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:email, :password, :nick_name, :date_of_birth, :description, :deleted)
+    params.require(:user).permit(:email, :password, :password_confirmation, :nick_name, :date_of_birth, :description,
+                                 :deleted)
   end
 end

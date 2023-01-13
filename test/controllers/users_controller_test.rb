@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'faker'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = create(:user)
   end
 
   test 'should get index' do
@@ -20,8 +21,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should create user' do
     assert_difference('User.count') do
       post users_url,
-           params: { user: { date_of_birth: '2000-12-12', deleted: 'false', description: 'A new user',
-                             email: 'john@mail.com', nick_name: 'John1', password: 'john123', password_confirmation: 'john123' } }
+           params: { user: { date_of_birth: @user.date_of_birth, deleted: 'false', description: 'A new user',
+                             email: Faker::Internet.email, nick_name: 'john', password: 'johN123', password_confirmation: 'johN123' } }
     end
     assert_redirected_to user_path(User.last)
   end
