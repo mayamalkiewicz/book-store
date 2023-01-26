@@ -5,7 +5,7 @@ class User < ApplicationRecord
                        format: { with: /\A(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/x,
                                  message: 'must be present and contain number, small letter and big letter' },
                        length: { minimum: 5, maximum: 50 }
-  validates_confirmation_of :password, if: :password_changed?, on: [:create, :update]
+  validates_confirmation_of :password, if: :password_changed?, on: %i[create update]
   validates_presence_of :password_confirmation, if: :password_changed?
   validates :date_of_birth, presence: true
   validate :date_of_birth_cannot_be_in_the_future

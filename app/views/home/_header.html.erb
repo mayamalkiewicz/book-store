@@ -1,13 +1,16 @@
-<!-- header -->
 <header class='header-container'>
   <p class='header-logo'>
-    <%= link_to 'BOOK STORE', root_path(anchor: "section-1") %>
+    <%= link_to 'BOOK STORE', root_path %>
   </p>
   <ul id="list-header">
-    <%= link_to 'About Me', root_path(anchor: "section-1"), class: 'font-light py-2 px-5' %>
-    <%= link_to 'Lorem Ipsum', root_path(anchor: "section-2"), class: 'font-light py-2 px-5' %>
-    <%= link_to 'To-Do List', root_path(anchor: "section-3"), class: 'font-light py-2 px-5' %>
-    <%= link_to 'Users', users_path, class: 'font-light py-2 px-5' %>
+    <% if logged_in? %>
+      <%= link_to 'Users', users_path, class: 'font-light py-2 px-5' %>
+      <%= button_to "Log out", sessions_path, method: :delete, class: 'font-light py-2 px-5' %>
+      <%= link_to "Profile", current_user, class: 'font-light py-2 px-5' %>
+    <% else %>
+      <%= link_to 'Log In', sessions_login_path, class: 'whitespace-nowrap font-light py-2 px-5'%>
+      <%= link_to 'Sign Up', new_user_path, class: 'whitespace-nowrap font-light py-2 px-5'%>
+    <% end %>
   </ul>
 </header>
 <%= javascript_include_tag 'header' %>

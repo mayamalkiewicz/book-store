@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  include SessionsHelper
   before_action :set_user, only: %i[show edit update destroy]
+  before_action :login_required, only: %i[show update edit destroy]
+  before_action :profile_authorization, only: %i[edit update destroy]
 
   # GET /users
   def index

@@ -15,5 +15,9 @@ module ActiveSupport
 
     # Add more helper methods to be used by all tests here...
     include FactoryBot::Syntax::Methods
+
+    def log_in_user
+      post sessions_url, params: { session: { email: @user.email, password: @user.password } }
+    end
   end
 end

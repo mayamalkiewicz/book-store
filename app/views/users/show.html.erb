@@ -1,9 +1,6 @@
-<div class=" mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 py-2 font-medium rounded-3xl mt-20 py-8">
+<div class=" mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 py-2 font-medium rounded-3xl mt-28 py-8">
   <h1 class="font-bold text-2xl text-center">Show user: <%= @user.nick_name%> </h1>
   <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-xl inline-block" id="notice"><%= notice %></p>
-    <% end %>
     <p class="my-5">
       <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Email:</strong>
       <br>
@@ -25,11 +22,13 @@
       <span><%= @user.description %></span>
     </p>
   </div>
-  <div class="flex justify-start">
-    <%= link_to 'Edit this user', edit_user_path(@user), class: "active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
-    
-    <%= button_to 'Delete this user', user_path(@user), method: :delete, class: "active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
-    
-    <%= link_to 'Back to users', users_path, class: "active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+  <div class="flex justify-start flex-wrap">
+    <% if logged_in? && current_user == @user %>
+      <%= link_to 'Edit this user', edit_user_path(@user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
+      <%= button_to 'Delete this user', user_path(@user), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+      <%= link_to 'Show all users', users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+      <% else %>
+      <%= link_to 'Show all users', users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+    <% end %>
   </div>
 </div>

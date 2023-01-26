@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <title>Book Store</title>
@@ -11,17 +10,25 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag '/favicon.ico?' %>
   </head>
-
-  <body> 
+  <body>
     <!-- header -->
+    <div>
     <%= render 'home/header'%>
-
     <!-- main -->
     <main>
-      <%= yield %>
+      <% if flash[:alert]%>
+        <div id="alert" class="mx-auto md:w-2/3 w-full bg-red-50 text-red-500 px-3 py-2 font-medium rounded-xl mt-24"><%= flash[:alert] %></div>
+      <% end %>
+      <% if notice.present? %>
+        <p class="mx-auto md:w-2/3 w-full px-3 py-2 bg-green-50 text-green-500 font-medium rounded-xl mt-24" id="notice"><%= notice %></p>
+      <% end %>
+      <div class="flex">
+        <%= yield %>
+      </div>
     </main>
-    <!-- footer --> 
+    <!-- footer -->
     <%= render 'home/footer'%>
   </body>
 </html>

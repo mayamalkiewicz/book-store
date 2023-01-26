@@ -1,12 +1,19 @@
-<div class="w-full mt-24 mx-auto">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-xl inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="w-full m-auto">
+  <% if logged_in? %>
   <div class="flex justify-between items-center mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 py-2 font-medium rounded-3xl mt-20 py-8">
+    <% else %>
+    <div class="mt-44 flex justify-between items-center mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 font-medium rounded-3xl mt-20 py-32">
+    <% end %>
     <h1 class="font-bold text-4xl">Users</h1>
-    <%= link_to 'New user', new_user_path, class: "active:bg-blue-800 hover:bg-blue-700 bg-blue-600 rounded-xl py-3 px-5 text-white block font-medium" %>
+  <% if logged_in? %>
   </div>
-  <div id="users" class="min-w-full">
-    <%= render @users %>
+    <div id="users" class="min-w-full">
+      <%= render @users %>
+    </div>
+  <% else %>
+  <div class='flex'>
+    <%= link_to 'Log In', sessions_login_path, class: "whitespace-nowrap active:bg-blue-800 hover:bg-blue-700 bg-blue-600 rounded-xl py-3 px-5 text-white block font-medium " %>
+    <%= link_to 'Sign Up', new_user_path, class: "whitespace-nowrap active:bg-blue-800 hover:bg-blue-700 bg-blue-600 rounded-xl py-3 px-5 text-white block font-medium ml-2" %>
   </div>
+  <% end %>
 </div>

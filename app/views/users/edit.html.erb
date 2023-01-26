@@ -1,6 +1,8 @@
 <div class="mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 py-2 font-medium rounded-3xl mt-20 py-8">
   <h1 class="font-bold text-2xl text-center">Editing user</h1>
-  <%= render "form", user: @user %>
-  <%= link_to "Show this user", @user, class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
-  <%= link_to "Back to users", users_path, class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
+  <div class="my-5">
+    <%= render "form", user: @user %>
+    <%= link_to "Show this user", @user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium mt-3" %>
+    <%= link_to "Show all users", users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-3 mt-3" %>
+  </div>
 </div>

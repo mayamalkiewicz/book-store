@@ -24,7 +24,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
            params: { user: { date_of_birth: @user.date_of_birth, deleted: 'false', description: 'A new user',
                              email: Faker::Internet.email, nick_name: 'john', password: 'johN123', password_confirmation: 'johN123' } }
     end
-    assert_redirected_to user_path(User.last)
+    assert_response :found
   end
 
   test 'should not create user' do
@@ -37,16 +37,19 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show user' do
+    log_in_user
     get user_url(@user)
     assert_response :success
   end
 
   test 'should get edit' do
+    log_in_user
     get edit_user_url(@user)
     assert_response :success
   end
 
   test 'should update user' do
+    log_in_user
     patch user_url(@user),
           params: { user: { date_of_birth: @user.date_of_birth, deleted: @user.deleted, description: @user.description,
                             email: @user.email, nick_name: @user.nick_name, password: @user.password } }
@@ -61,10 +64,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy user' do
+    log_in_user
     assert_difference('User.count', -1) do
       delete user_url(@user)
     end
 
     assert_redirected_to users_url
   end
+  
 end

@@ -21,10 +21,11 @@
       <span class=""><%= user.description %></span>
     </p>
     <div class="flex justify-start">
-      <% if action_name != "show" %>
-        <%= link_to "Show this user", user, class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4" %>
-        <%= link_to 'Edit this user', edit_user_path(user), class: "active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 ml-2 px-5 bg-white inline-block font-medium" %>
-        <hr class="mt-6">
+      <% if logged_in? && current_user == @user %>
+          <%= link_to "Show this user", user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
+          <%= link_to 'Edit this user', edit_user_path(@user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
+        <% else %>
+          <%= link_to "Show this user", user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
       <% end %>
     </div>
   </div>
