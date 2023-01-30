@@ -4,6 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
+include SessionsHelper
 
 module ActiveSupport
   class TestCase
@@ -19,5 +20,6 @@ module ActiveSupport
     def log_in_user
       post sessions_url, params: { session: { email: @user.email, password: @user.password } }
     end
+    
   end
 end

@@ -1,12 +1,12 @@
 class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: 'invalid format' }
-  validates :password, presence: true,
-                       format: { with: /\A(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/x,
+  has_secure_password
+  validates :password, format: { with: /\A(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/x,
                                  message: 'must be present and contain number, small letter and big letter' },
-                       length: { minimum: 5, maximum: 50 }
-  validates_confirmation_of :password, if: :password_changed?, on: %i[create update]
-  validates_presence_of :password_confirmation, if: :password_changed?
+                       length: { minimum: 5, maximum: 50 },
+                       on: :create
+  validates :password_confirmation, presence: true, on: :create
   validates :date_of_birth, presence: true
   validate :date_of_birth_cannot_be_in_the_future
   validate :date_of_birth_cannot_be_more_than_100_years_ago

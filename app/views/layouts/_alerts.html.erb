@@ -1,0 +1,6 @@
+<% if alert.present? %>
+  <p id="alert" class="mx-auto md:w-2/3 w-full bg-red-50 text-red-500 px-3 py-2 font-medium rounded-xl mt-24"><%= alert %></p>
+<% end %>
+<% if notice.present? %>
+  <p class="mx-auto md:w-2/3 w-full px-3 py-2 bg-green-50 text-green-500 font-medium rounded-xl mt-24" id="notice"><%= notice %></p>
+<% end %>

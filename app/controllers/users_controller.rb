@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  include SessionsHelper
   before_action :set_user, only: %i[show edit update destroy]
   before_action :login_required, only: %i[show update edit destroy]
   before_action :profile_authorization, only: %i[edit update destroy]
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_url(@user), notice: 'User was successfully created.'
+      redirect_to logged_in? ? user_url(User.last) : sessions_login_path, notice: 'User was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -53,4 +52,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation, :nick_name, :date_of_birth, :description,
                                  :deleted)
   end
+
 end

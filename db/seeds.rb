@@ -11,6 +11,6 @@ require 'faker'
 
 User.delete_all
 
-50.times do
+25.times do
   FactoryBot.create(:user)
 end

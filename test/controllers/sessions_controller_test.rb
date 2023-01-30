@@ -1,5 +1,4 @@
 require 'test_helper'
-include SessionsHelper
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
 
@@ -74,14 +73,11 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not be able to log-in as a deleted user" do
-    log_in_user
-    assert_redirected_to user_path(@user)
-    delete user_path(@user)
+    deleted_user = create(:user, deleted: true)
+    post sessions_path, params: { session: { email: deleted_user.email, password: deleted_user.password } }
     assert_response :redirect
-    log_in_user
     assert_redirected_to sessions_login_path
-    assert_not flash.empty?
-    assert_equal 'Invalid email/password combination, try again!', flash[:alert]
+    assert_equal flash[:alert], 'Invalid email/password combination, try again!'
   end
 
 end

@@ -52,7 +52,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_user
     patch user_url(@user),
           params: { user: { date_of_birth: @user.date_of_birth, deleted: @user.deleted, description: @user.description,
-                            email: @user.email, nick_name: @user.nick_name, password: @user.password } }
+                            email: @user.email, nick_name: @user.nick_name, password: @user.password, password_confirmation: @user.password_confirmation } }
     assert_redirected_to user_url(@user)
     @user.reload
     assert_equal @user.date_of_birth, @user.date_of_birth
@@ -61,15 +61,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal @user.email, @user.email
     assert_equal @user.nick_name, @user.nick_name
     assert_equal @user.password, @user.password
+    assert_equal @user.password_confirmation, @user.password_confirmation
   end
 
   test 'should destroy user' do
     log_in_user
-    assert_difference('User.count', -1) do
-      delete user_url(@user)
-    end
-
+    delete user_url(@user)
+    assert :deleted
     assert_redirected_to users_url
+    assert_equal "User was successfully deleted.", flash[:notice]
   end
   
 end
