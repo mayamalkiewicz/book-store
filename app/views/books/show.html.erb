@@ -1,0 +1,35 @@
+<div class="mx-auto md:w-2/3 w-full mb-12 bg-gray-100 text-black-500 px-3 py-2 font-medium rounded-3xl mt-28 py-8">
+  <h1 class="font-bold text-2xl text-center">Show Book: <%= @book.title %> </h1>
+  <div class="m-auto">
+    <div class="flex justify-between">
+      <div>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Title:</strong>
+          <br>
+          <span><%= @book.title %></span>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Pages:</strong>
+          <br>
+          <span><%= @book.pages %></span>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Date of publication:</strong>
+          <br>
+          <span><%= @book.date_of_publication.strftime("%d/%m/%Y") %></span>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Description:</strong>
+          <br>
+          <span><%= @book.description %></span>
+        </p>
+      </div>
+    </div>
+    <div class="flex justify-start flex-wrap">
+      <%= link_to 'Edit this book', edit_book_path(@book), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
+      <div class="inline-block ml-2">
+        <%= button_to 'Delete this book', book_path(@book), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+      </div>
+      <%= link_to 'Back to books', books_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+    </div>
+  </div>

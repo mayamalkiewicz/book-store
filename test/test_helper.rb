@@ -4,7 +4,6 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
-include SessionsHelper
 
 module ActiveSupport
   class TestCase
@@ -15,11 +14,11 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    include SessionsHelper
     include FactoryBot::Syntax::Methods
 
     def log_in_user
       post sessions_url, params: { session: { email: @user.email, password: @user.password } }
     end
-    
   end
 end

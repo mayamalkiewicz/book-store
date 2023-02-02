@@ -11,7 +11,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   # email validation tests
-
   test 'invalid - email is not present' do
     @user.email = nil
     assert_not @user.valid?
@@ -32,9 +31,9 @@ class UserTest < ActiveSupport::TestCase
 
   test 'invalid - duplicate email' do
     create(:user, email: 'user@example.com')
-    user_2 = build(:user, email: 'user@example.com')
-    refute user_2.valid?
-    assert_not_nil user_2.errors[:email]
+    user2 = build(:user, email: 'user@example.com')
+    refute user2.valid?
+    assert_not_nil user2.errors[:email]
   end
 
   # password validation tests

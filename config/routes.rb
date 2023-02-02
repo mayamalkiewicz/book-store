@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :books
   resources :users
   resource :sessions, only: %i[login create destroy]
   root 'home#startpage'

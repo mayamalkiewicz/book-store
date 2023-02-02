@@ -20,5 +20,4 @@ class SessionsController < ApplicationController
     flash[:notice] = 'You are logged out!'
     redirect_to users_path
   end
-
 end

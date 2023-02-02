@@ -31,6 +31,7 @@ module SessionsHelper
 
   def login_required
     return if current_user
+
     flash[:alert] = 'You must be logged in to view this page.'
     redirect_to sessions_login_path
   end

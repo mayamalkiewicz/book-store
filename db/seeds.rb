@@ -14,3 +14,9 @@ User.delete_all
 25.times do
   FactoryBot.create(:user)
 end
+
+Book.delete_all
+
+25.times do
+  FactoryBot.create(:book)
+end

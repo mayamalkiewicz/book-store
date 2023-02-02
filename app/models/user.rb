@@ -6,7 +6,8 @@ class User < ApplicationRecord
                                  message: 'must be present and contain number, small letter and big letter' },
                        length: { minimum: 5, maximum: 50 },
                        on: :create
-  validates :password_confirmation, presence: true, on: :create
+  validates :password_confirmation, presence: true,
+                                    on: :create
   validates :date_of_birth, presence: true
   validate :date_of_birth_cannot_be_in_the_future
   validate :date_of_birth_cannot_be_more_than_100_years_ago

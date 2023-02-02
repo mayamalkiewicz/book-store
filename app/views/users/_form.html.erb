@@ -9,36 +9,43 @@
       </ul>
     </div>
   <% end %>
-  <div class="my-5">
-    <%= form.label :email %>
-    <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <% if !logged_in? || user.new_record? %>
-  <div class="my-5">
-    <%= form.label :password %>
-    <%= form.password_field :password, placeholder: "password", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, placeholder: "password confirmation",class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <% end %>
-  <div class="my-5">
-    <%= form.label :nick_name %>
-    <%= form.text_field :nick_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :date_of_birth %>
-    <%= form.date_field :date_of_birth, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="flex justify-between">
+    <div>
+      <div class="my-5">
+        <%= form.label :email %>
+        <%= form.text_field :email, placeholder: "john@mail.pl", class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+      <% if !logged_in? || user.new_record? %>
+        <div class="my-5">
+          <%= form.label :password %>
+          <%= form.password_field :password, placeholder: "password", class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="my-5">
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation, placeholder: "password confirmation", class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+      <% end %>
+      <div class="my-5">
+        <%= form.label :nick_name %>
+        <%= form.text_field :nick_name, placeholder: "john1", class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+      <div class="my-5">
+        <%= form.label :date_of_birth %>
+        <%= form.date_field :date_of_birth, class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+      <div class="my-5">
+        <%= form.label :description %>
+        <%= form.text_area :description, rows: 4, placeholder: "Write sth about yourself.", class: "shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      </div>
+    </div>
+    <div class="m-auto">
+      <%= image_tag("avatar", :class => "object-cover h-48 w-36 rounded-lg") %>
+    </div>
   </div>
   <div class="inline">
     <%= form.submit class: "rounded-xl py-3 px-5 active:bg-blue-800 hover:bg-blue-700 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
   <% if logged_in? %>
-  <%= link_to 'Back to users', users_path, class: "whitespace-nowrap active:bg-gray-200 rounded-xl py-3 px-5 bg-white inline-block font-medium mt-3 ml-4" %>
+    <%= link_to 'Back to users', users_path, class: "whitespace-nowrap active:bg-gray-200 rounded-xl py-3 px-5 bg-white inline-block font-medium mt-3 ml-4" %>
   <% end %>
 <% end %>

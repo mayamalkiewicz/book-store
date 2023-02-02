@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
+  # PATCH/PUT /users/:id
   def update
     if @user.update(user_params)
       redirect_to user_url(@user), notice: 'User was successfully updated.'
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/1
+  # DELETE /users/:id
   def destroy
     @user.update(deleted: true)
     redirect_to users_url, notice: 'User was successfully deleted.'
@@ -52,5 +52,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation, :nick_name, :date_of_birth, :description,
                                  :deleted)
   end
-
 end
