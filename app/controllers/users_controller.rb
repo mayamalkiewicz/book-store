@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # GET /users/:id
+  def show
+    @books = @user.books.includes(:users_books).where(users_books: { user_id: @user.id })
+  end
+
   # POST /users
   def create
     @user = User.new(user_params)

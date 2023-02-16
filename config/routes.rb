@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :books
   resources :users
   resource :sessions, only: %i[login create destroy]
+  resource :users_books, only: %i[create destroy]
   root 'home#startpage'
 
   # Defines the root path route ("/")

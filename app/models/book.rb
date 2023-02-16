@@ -1,6 +1,5 @@
 class Book < ApplicationRecord
-  # soft delete
-  default_scope { where(deleted: false) }
+  scope :active, -> { where(deleted: false) }
   validates :title, presence: true,
                     length: { maximum: 100 }
   validates :date_of_publication, presence: true
@@ -9,6 +8,17 @@ class Book < ApplicationRecord
   validates :description, presence: true
   validates :deleted, inclusion: { in: [true, false] }
   before_validation :set_default_deleted, on: :create
+
+  has_many :users_books
+  has_many :users, through: :users_books
+
+  def destroy_with_usersbooks
+    transaction do
+      self.deleted = true
+      users_books.destroy_all
+      save!
+    end
+  end
 
   private
 

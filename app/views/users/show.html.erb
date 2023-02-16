@@ -23,6 +23,8 @@
           <br>
           <span><%= @user.description %></span>
         </p>
+
+        <%= @user.books.empty? ? render('show_table_usersbook_if_empty') : render('show_table_usersbooks') %>
       </div>
       <div class="m-auto">
         <%= image_tag("avatar", :class => "object-cover h-58 w-36 rounded-lg") %>
@@ -32,10 +34,8 @@
       <% if logged_in? && current_user == @user %>
         <%= link_to 'Edit this user', edit_user_path(@user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
         <%= button_to 'Delete this user', user_path(@user), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
-        <%= link_to 'Show all users', users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
-      <% else %>
-        <%= link_to 'Show all users', users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
       <% end %>
+      <%= link_to 'Show all users', users_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
     </div>
   </div>
 </div>

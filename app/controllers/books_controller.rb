@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.all
+    @books = Book.all.active
   end
 
   # GET /books/new
@@ -34,7 +34,7 @@ class BooksController < ApplicationController
 
   # DELETE /books/:id
   def destroy
-    @book.update(deleted: true)
+    @book.destroy_with_usersbooks
     redirect_to books_url, notice: 'Book was successfully deleted.'
   end
 

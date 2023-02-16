@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'test_helper'
-require 'faker'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do

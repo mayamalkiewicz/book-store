@@ -28,12 +28,10 @@
       </div>
     </div>
     <div class="flex justify-start">
-      <% if logged_in? && current_user == @user %>
-        <%= link_to "Show this user", user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
-        <%= link_to 'Edit this user', edit_user_path(@user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
-      <% else %>
-        <%= link_to "Show this user", user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
+      <% if logged_in? && current_user == user %>
+        <%= link_to 'Edit user', edit_user_path(user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
       <% end %>
+      <%= link_to "Show this user", user, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
     </div>
   </div>
 </div>

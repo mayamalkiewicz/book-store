@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :logout_required, only: %i[login create]
   before_action :login_required, only: %i[destroy]
 
+  # POST /sessions
   def create
     @user = User.find_by(email: params[:session][:email])
     if @user&.authenticate(params[:session][:password])
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
     end
   end
 
+  # DELETE /sessions
   def destroy
     log_out
     flash[:notice] = 'You are logged out!'

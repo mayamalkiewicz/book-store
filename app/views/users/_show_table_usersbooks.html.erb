@@ -1,0 +1,20 @@
+<table class="my-8 py-4 bg-gray-50 rounded-xl">
+  <thead>
+    <tr>
+      <th><strong class="py-1 inline-block w-36 rounded-xl w-36">My books:</strong></th>
+      <th><strong class="py-1 inline-block w-36 rounded-xl w-36">Action:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr class="my-5">
+        <td>
+          <span class="py-1 mx-2" ><%= book.title %></span>
+        </td>
+        <td>
+          <%= button_to "Remove book", users_books_path(id: book.users_books.first.id), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 m-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

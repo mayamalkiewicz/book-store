@@ -31,5 +31,6 @@
         <%= button_to 'Delete this book', book_path(@book), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
       </div>
       <%= link_to 'Back to books', books_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+      <%= button_to "Add to my books", users_books_path(book_id: @book.id, user_id: current_user.id), method: :post, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
     </div>
   </div>

@@ -19,6 +19,9 @@ class User < ApplicationRecord
   validates :deleted, inclusion: { in: [true, false] }
   before_validation :set_default_deleted, on: :create
 
+  has_many :users_books
+  has_many :books, through: :users_books
+
   private
 
   # soft delete

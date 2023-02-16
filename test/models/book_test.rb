@@ -39,4 +39,14 @@ class BookTest < ActiveSupport::TestCase
     book = Book.new(deleted: true)
     assert_not book.valid?
   end
+
+  test 'should soft delete book and destroy associated users_books' do
+    users_book = create(:users_book)
+    book = users_book.book
+
+    book.destroy_with_usersbooks
+    assert book.deleted
+    assert_not_nil Book.where(deleted: true).find(book.id)
+    assert_nil UsersBook.find_by(id: users_book.id)
+  end
 end
