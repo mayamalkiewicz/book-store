@@ -63,7 +63,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'invalid - with date_of_birth in the future' do
-    @user.date_of_birth = Date.tomorrow
+    @user.date_of_birth = Date.tomorrow + 1.year
     refute @user.valid?
     assert_not_nil @user.errors[:date_of_birth]
   end
@@ -106,9 +106,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil @user.errors[:description]
   end
 
-  # deleted validation tests
-  test 'invalid - with deleted equal to nill' do
+  test 'invalid - with deleted equal to nil' do
     @user.deleted = nil
     refute !@user.deleted.nil?
+  end
+
+  test 'check if set role to regular user if sign up new user' do
+    assert_equal @user.role, 'regular'
   end
 end

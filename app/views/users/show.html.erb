@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="flex justify-start flex-wrap">
-      <% if logged_in? && current_user == @user %>
+      <% if logged_in? && (current_user == @user || current_user.admin?) %>
         <%= link_to 'Edit this user', edit_user_path(@user), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
         <%= button_to 'Delete this user', user_path(@user), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
       <% end %>

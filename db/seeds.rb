@@ -11,6 +11,9 @@ require 'faker'
 
 User.delete_all
 
+# FactoryBot.create(:user, role: :admin) # another option, but here the first user from '25.times do' would be the admin - we do not know the password
+FactoryBot.create(:admin)
+
 25.times do
   FactoryBot.create(:user)
 end

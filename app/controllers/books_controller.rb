@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   include SessionsHelper
   before_action :login_required
+  before_action :require_admin!, except: %i[index show]
   before_action :set_book, only: %i[show edit update destroy]
 
   # GET /books

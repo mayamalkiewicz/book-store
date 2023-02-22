@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_202_100_918) do
+ActiveRecord::Schema[7.0].define(version: 20_230_209_150_815) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -19,20 +19,21 @@ ActiveRecord::Schema[7.0].define(version: 20_230_202_100_918) do
     t.date 'date_of_publication'
     t.integer 'pages'
     t.text 'description'
-    t.boolean 'deleted'
+    t.boolean 'deleted', default: false, null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
   create_table 'users', force: :cascade do |t|
     t.string 'email'
+    t.string 'password_digest'
     t.string 'nick_name'
     t.date 'date_of_birth'
     t.text 'description'
     t.boolean 'deleted', default: false, null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.string 'password_digest'
+    t.integer 'role', default: 0
   end
 
   create_table 'users_books', force: :cascade do |t|

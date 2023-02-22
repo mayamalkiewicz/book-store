@@ -7,7 +7,7 @@ class UsersBooksControllerTest < ActionDispatch::IntegrationTest
     @users_book = create(:users_book)
     @user = @users_book.user
     @book = @users_book.book
-    log_in_user
+    log_in(@user)
   end
 
   test 'should create users_book relation' do

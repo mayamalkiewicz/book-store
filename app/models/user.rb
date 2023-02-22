@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  enum role: { regular: 0, admin: 1 }
+
   validates :email, presence: true, uniqueness: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP, message: 'invalid format' }
   has_secure_password
@@ -16,15 +18,11 @@ class User < ApplicationRecord
                                     too_long: '%<count>s characters is the maximum allowed' },
                           allow_blank: true
 
-  validates :deleted, inclusion: { in: [true, false] }
-  before_validation :set_default_deleted, on: :create
-
   has_many :users_books
   has_many :books, through: :users_books
 
   private
 
-  # soft delete
   default_scope { where(deleted: false) }
 
   def date_of_birth_cannot_be_in_the_future
@@ -38,9 +36,5 @@ class User < ApplicationRecord
 
     errors.add(:date_of_birth,
                'can not be more than 100 years ago')
-  end
-
-  def set_default_deleted
-    self.deleted ||= false
   end
 end

@@ -42,4 +42,8 @@ module SessionsHelper
     flash[:alert] = 'You must be logged out to view this page.'
     redirect_to users_path
   end
+
+  def require_admin!
+    redirect_to root_path, notice: 'You are not authorized to perform this action.' unless current_user.admin?
+  end
 end

@@ -17,8 +17,14 @@ module ActiveSupport
     include SessionsHelper
     include FactoryBot::Syntax::Methods
 
-    def log_in_user
-      post sessions_url, params: { session: { email: @user.email, password: @user.password } }
+    def log_in(user)
+      post sessions_url, params: { session: { email: user.email, password: user.password } }
+    end
+
+    def assert_attributes(model_name, attributes_hash)
+      attributes_hash.each do |key, value|
+        assert_equal value, model_name.send(key)
+      end
     end
   end
 end

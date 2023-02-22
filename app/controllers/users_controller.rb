@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
   before_action :login_required, only: %i[show update edit destroy]
-  before_action :profile_authorization, only: %i[edit update destroy]
+  before_action :require_admin_or_account_owner, only: %i[edit update destroy]
 
   # GET /users
   def index
@@ -56,5 +56,13 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :nick_name, :date_of_birth, :description,
                                  :deleted)
+  end
+
+  # Checks if the logged in user is the owner or admin to edit/update/delete profile.
+  def require_admin_or_account_owner
+    return if current_user.id == @user.id || current_user.admin?
+
+    flash[:alert] = 'You must be logged in as this user to view this page.'
+    redirect_to users_url
   end
 end
