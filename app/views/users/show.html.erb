@@ -2,7 +2,7 @@
   <h1 class="font-bold text-2xl text-center">Show user: <%= @user.nick_name%> </h1>
   <div class="mx-auto">
     <div class="flex justify-between">
-      <div>
+      <div class="w-1/2">
         <p class="my-5">
           <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Email:</strong>
           <br>
@@ -23,10 +23,14 @@
           <br>
           <span><%= @user.description %></span>
         </p>
-
         <%= @user.books.empty? ? render('show_table_usersbook_if_empty') : render('show_table_usersbooks') %>
+        <p class="mt-5 flex">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100">My comments:</strong>
+          <br>
+          <span><%= render partial: 'show_comments' %></span>
+        </p>
       </div>
-      <div class="m-auto">
+      <div class="m-auto flex content-center">
         <%= image_tag("avatar", :class => "object-cover h-58 w-36 rounded-lg") %>
       </div>
     </div>

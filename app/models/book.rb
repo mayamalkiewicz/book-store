@@ -11,6 +11,7 @@ class Book < ApplicationRecord
 
   has_many :users_books
   has_many :users, through: :users_books
+  has_many :comments
 
   def destroy_with_usersbooks
     transaction do

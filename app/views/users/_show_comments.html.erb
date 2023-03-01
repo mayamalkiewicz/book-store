@@ -1,0 +1,26 @@
+<% unless @user.comments.empty? %>
+  <table class="mb-8 rounded-xl flex w-1/2">
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr class="flex justify-between my-2">
+          <td class="grow flex-wrap flex flex-col bg-white rounded-xl">
+            <div>
+              <p class="p-2"><%= comment.content %></p>
+            </div>
+            <div class="m-1 p-1">
+              <span class="font-light text-xs">Book:</span> <%= link_to comment.book.title, book_path(comment.book), class:"m-1 p-1 bg-gray-100 rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-xs" %>
+            </div>
+          </td>
+          <td class= "flex flex-col content-end">
+            <% if current_user == @user || current_user.admin? %>
+              <%= button_to 'Delete comment', book_comment_path(comment.book, comment), method: :delete, class: "m-1 p-1 bg-white rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-sm" %>
+              <%= link_to 'Edit comment', edit_book_comment_path(comment.book, comment), class: "m-1 p-1 bg-white rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-sm" %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="mb-8 py-4 bg-gray-50 rounded-xl"><span class="m-1">Nothing here.</span></p>
+<% end %>

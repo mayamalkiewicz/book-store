@@ -1,0 +1,15 @@
+<article class="my-4 py-2 bg-white rounded-xl ">
+  <div class="flex flex-row items-start justify-between">
+    <div class="flex justify-between">
+      <%= link_to comment.user.nick_name, user_path(comment.user, comment), method: :get, class: "m-1 p-1 bg-gray-100 rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-xs"  %>
+      <span class="m-1 p-1 font-extralight text-xs"> <%= comment.created_at.strftime("%d.%m.%Y") %> </span>
+    </div>
+    <div class="flex justify-between">
+      <% if current_user == comment.user || current_user.admin? %>
+        <%= link_to 'Edit comment', edit_book_comment_path(@book, comment), class: "m-1 p-1 bg-gray-100 rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-xs"  %>
+        <%= button_to 'Delete this comment', book_comment_path(@book, comment), method: :delete, class: "m-1 p-1 bg-gray-100 rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-xs" %>
+      <% end %>
+    </div>
+  </div>
+  <p class= "p-2"> <%= comment.content %> </p>
+</article>

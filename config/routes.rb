@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :books
+  resources :books do
+    resources :comments, only: %i[create update edit destroy]
+  end
+
   resources :users
   resource :sessions, only: %i[login create destroy]
   resource :users_books, only: %i[create destroy]

@@ -1,0 +1,7 @@
+<% if @book.comments.empty? %>
+  <div class="py-2 bg-white rounded-xl">
+    <p class="mx-2">No comments yet.</p>
+  </div>
+<% else %>
+  <%= render @book.comments.order(id: :desc) %>
+<% end %>

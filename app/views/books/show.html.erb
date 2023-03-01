@@ -23,14 +23,23 @@
           <br>
           <span><%= @book.description %></span>
         </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl bg-gray-100 w-36">Comments:</strong>
+          <br>
+          <span><%= render partial: 'show_comments' %></span>
+          <strong class="py-2 inline-block w-36 rounded-xl bg-gray-100 w-36">Add comment:</strong>
+          <span><%= render partial: 'comments/form', locals: { book: @book } %></span>
+        </p>
       </div>
     </div>
-    <div class="flex justify-start flex-wrap">
-      <%= link_to 'Edit this book', edit_book_path(@book), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
-      <div class="inline-block ml-2">
-        <%= button_to 'Delete this book', book_path(@book), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
-      </div>
-      <%= link_to 'Back to books', books_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
-      <%= button_to "Add to my books", users_books_path(book_id: @book.id, user_id: current_user.id), method: :post, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 ml-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+    <div class="flex justify-start flex-wrap gap-2">
+      <% if current_user.admin? %>
+        <%= link_to 'Edit this book', edit_book_path(@book), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white inline-block font-medium" %>
+        <div class="inline-block">
+          <%= button_to 'Delete this book', book_path(@book), method: :delete, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+        </div>
+      <% end %>
+      <%= link_to 'Back to books', books_path, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white font-medium" %>
+      <%= button_to "Add to my books", users_books_path(book_id: @book.id, user_id: current_user.id), method: :post, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 mt-2 rounded-xl py-3 px-5 bg-white font-medium" %>
     </div>
   </div>

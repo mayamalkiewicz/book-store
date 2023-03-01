@@ -18,8 +18,10 @@
     </p>
     <% if action_name != "show" %>
       <%= link_to "Show this book", book, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
-      <%= link_to 'Edit this book', edit_book_path(book), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
-      <hr class="mt-6">
+      <% if current_user.admin? %>
+        <%= link_to 'Edit this book', edit_book_path(book), class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-2 mt-3" %>
+        <hr class="mt-6">
+      <% end %>
     <% end %>
   </div>
 </div>

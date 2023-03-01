@@ -1,0 +1,26 @@
+<% if current_user.books.include?(@book) %>
+  <% @book.comments.each do |comment| %>
+    <% if comment.errors.any? %>
+      <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+        <h2><%= pluralize(@book.comments.errors.count, "error") %> Prohibited this comment from being saved:</h2>
+        <ul>
+          <% comment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+  <%= form_with(model: [ @book, @book.comments.build ]) do |form| %>
+    <div class="my-5 relative">
+      <%= form.text_area :content, rows: 5, placeholder: "Write your comment here:", class: "rounded-xl px-3 py-2 w-full" %>
+      <div class="absolute bottom-4 right-2">
+        <%= form.submit "Create Comment", class: "m-1 p-1 bg-gray-100 rounded-xl whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 font-extralight text-sm" %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="mb-5 py-2 bg-white rounded-xl">
+    <p class="mx-2">If you want to comment read the book first and add it to your list.</p>
+  </div>
+<% end %>

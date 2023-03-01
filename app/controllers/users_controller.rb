@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @books = @user.books.includes(:users_books).where(users_books: { user_id: @user.id })
+    @comments = @user.comments.includes(:book)
   end
 
   # POST /users
