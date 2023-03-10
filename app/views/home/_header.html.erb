@@ -8,7 +8,7 @@
       <%= link_to 'Users', users_path, class: 'font-light py-2 px-5' %>
       <%= button_to "Log out", sessions_path, method: :delete, class: 'font-light py-2 px-5' %>
       <%= link_to "Profile", current_user, class: 'font-light py-2 px-5' %>
-      <%= image_tag("avatar-2", :class => "rounded-full mr-4 object-cover") %>
+      <%= image_tag("avatar-2.png", :class => "rounded-full mr-4 object-cover") %>
     <% else %>
       <%= link_to 'Log In', sessions_login_path, class: 'whitespace-nowrap font-light py-2 px-5'%>
       <%= link_to 'Sign Up', new_user_path, class: 'whitespace-nowrap font-light py-2 px-5'%>

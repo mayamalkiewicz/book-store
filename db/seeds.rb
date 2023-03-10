@@ -9,6 +9,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+UsersBook.delete_all
+Comment.delete_all
+
 User.delete_all
 
 FactoryBot.create(:user, :admin)
