@@ -1,8 +1,12 @@
-# README
+# Book-Store Application #
 
+Hello! This is the LLI Internship Project.
 
-Hello! This is the LLI Internship Project phase-1.
+Intention of this project is to create the simple Ruby On Rails app.
+In these case the book-store app where we can have a collection of books online.
 
-Intention of this task is to create the basic web page using HTML, CSS and JS in Ruby On Rails structure.
+In the latest release of app:
+1. Every user can have their own collection of books picked up from the whole book library. 
+2. There is also a possibility to comment books by users.
 
-The web-page include some basic information about me like personal info or hobbies and the exercise of to-do list. Beside of the to-do list, every aspect of page should contain some JS interactivity.
+##### 2023 Maja Małkiewicz LLInformatics Internship Project
