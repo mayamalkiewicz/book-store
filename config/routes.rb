@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   resource :users_books, only: %i[create destroy]
   root 'home#startpage'
 
+  namespace :api do
+    namespace :v1 do
+      resources :books, only: %i[index show]
+    end
+  end
+
   # Defines the root path route ("/")
   get 'home/list'
   get 'sessions/login'

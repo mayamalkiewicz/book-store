@@ -25,6 +25,7 @@ Book.delete_all
 25.times do
   book = FactoryBot.create(:book)
   User.all.each do |user|
-    FactoryBot.create(:comment, book:, user:)
+    FactoryBot.create(:users_book, user: user, book: book)
+    FactoryBot.create(:comment, book: book, user: user)
   end
 end
