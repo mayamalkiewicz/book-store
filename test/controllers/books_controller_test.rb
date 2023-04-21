@@ -64,6 +64,29 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       assert_not_nil Book.where(deleted: true).find(book.id)
       assert_nil UsersBook.find_by(id: users_book.id)
     end
+
+    test 'should create book with valid image' do
+      @params[:deleted] = false
+      @params[:image] = fixture_file_upload('test.jpeg', 'image/jpeg')
+
+      post books_url, params: { book: @params }
+
+      new_book = Book.last
+      image_data = JSON.parse(new_book.image_data)
+      image_filename = image_data.dig('metadata', 'filename')
+
+      assert_not_nil new_book.image_data
+      assert_equal image_filename, 'test.jpeg'
+    end
+
+    test 'should not create book with invalid file format' do
+      @params[:deleted] = false
+      @params[:image] = fixture_file_upload('test.txt', 'text/txt')
+
+      post books_url, params: { book: @params }
+
+      assert_response :unprocessable_entity
+    end
   end
 
   class RequireUserLogIn < BooksControllerTest

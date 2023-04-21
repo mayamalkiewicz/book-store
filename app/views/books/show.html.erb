@@ -31,6 +31,13 @@
           <span><%= render partial: 'comments/form', locals: { book: @book } %></span>
         </p>
       </div>
+      <div class="m-auto mt-28 flex content-center">
+        <% if @book.image_url %>
+          <%= image_tag @book.image_url, class: "object-cover h-58 w-36 rounded-lg" %>
+        <% else %>
+          <%= image_tag("book.jpeg", class: "object-cover h-58 w-36 rounded-lg") %>
+        <% end %>
+      </div>
     </div>
     <div class="flex justify-start flex-wrap gap-2">
       <% if current_user.admin? %>

@@ -1,21 +1,35 @@
 <div class= "mx-auto md:w-2/3 w-full mb-12 ">
   <div class="bg-gray-100 rounded-3xl py-6 mb-4 mt-12">
-    <p class="my-5">
-      <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Title:</strong>
-      <%= book.title %>
-    </p>
-    <p class="my-5">
-      <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Date of publication:</strong>
-      <%= book.date_of_publication %>
-    </p>
-    <p class="my-5">
-      <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Pages:</strong>
-      <%= book.pages %>
-    </p>
-    <p class="my-5">
-      <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Description:</strong>
-      <%= book.description %>
-    </p>
+    <div class="flex justify-between">
+      <div>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Title:</strong>
+          <%= book.title %>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Date of publication:</strong>
+          <%= book.date_of_publication %>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Pages:</strong>
+          <%= book.pages %>
+        </p>
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Description:</strong>
+          <%= book.description %>
+        </p>
+      </div>
+      <div class="m-auto mt-28 flex content-center">
+        <p class="my-5">
+          <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Image:</strong>
+          <% if book.image_data %>
+            <%= image_tag book.image_url(:index), class: "object-cover h-58 w-36 rounded-lg" %>
+          <% else %>
+            <%= image_tag("book.jpeg", class: "object-cover h-58 w-36 rounded-lg") %>
+          <% end %>
+        </p>
+      </div>
+    </div>
     <% if action_name != "show" %>
       <%= link_to "Show this book", book, class: "whitespace-nowrap active:bg-gray-200 hover:bg-gray-50 rounded-xl py-3 px-5 bg-white inline-block font-medium ml-4 mt-3" %>
       <% if current_user.admin? %>

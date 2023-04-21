@@ -49,4 +49,15 @@ class BookTest < ActiveSupport::TestCase
     assert_not_nil Book.where(deleted: true).find(book.id)
     assert_nil UsersBook.find_by(id: users_book.id)
   end
+
+  test "should include ImageUploader module for image attribute" do
+    assert_respond_to @book, :image
+  end
+
+  test "should save book with image" do
+    book = build(:book, image: File.open('test/fixtures/files/test.jpeg', 'rb'))
+    assert_respond_to book, :image
+
+    assert book.save
+  end
 end

@@ -9,21 +9,37 @@
       </ul>
     </div>
   <% end %>
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, placeholder: "Harry Potter", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :date_of_publication %>
-    <%= form.date_field :date_of_publication, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :pages %>
-    <%= form.number_field :pages, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-  <div class="my-5">
-    <%= form.label :description %>
-    <%= form.text_area :description, rows: 4, placeholder: "The book about adventures of young wizzards from school of wizzards Hogwart.", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="m-auto">
+    <div class="flex justify-between">
+      <div>
+        <div class="my-5">
+          <%= form.label :title %>
+          <%= form.text_field :title, placeholder: "Harry Potter", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="my-5">
+          <%= form.label :date_of_publication %>
+          <%= form.date_field :date_of_publication, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="my-5">
+          <%= form.label :pages %>
+          <%= form.number_field :pages, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+        <div class="my-5">
+          <%= form.label :description %>
+          <%= form.text_area :description, rows: 4, placeholder: "The book about adventures of young wizzards from school of wizzards Hogwart.", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+        </div>
+      </div>
+      <div>
+        <div class="m-auto mt-28 flex-col content-center">
+          <%= form.label :image %>
+          <br>
+          <br>
+          <%= image_tag form.object.image_url, class: "object-cover h-58 w-36 rounded-lg" if form.object.cached_image_data %>
+          <%= form.hidden_field :image, value: @book.cached_image_data %>
+          <%= form.file_field :image %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="inline">
     <%= form.submit class: "rounded-xl py-3 px-5 active:bg-blue-800 hover:bg-blue-700 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
