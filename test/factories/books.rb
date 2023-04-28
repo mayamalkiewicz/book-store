@@ -5,5 +5,6 @@ FactoryBot.define do
     pages { Faker::Number.between(from: 4, to: 1000) }
     description { Faker::Book.genre }
     deleted { false }
+    image_data { TestData.image_data }
   end
 end

@@ -92,3 +92,9 @@ gem 'factory_bot_rails'
 gem 'faker'
 
 gem 'shrine', '~> 3.4'
+
+gem 'sidekiq', '~> 7.0'
+
+gem 'redis'
+
+gem 'fastimage'

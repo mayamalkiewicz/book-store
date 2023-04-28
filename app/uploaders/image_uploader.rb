@@ -24,4 +24,8 @@ class ImageUploader < Shrine
       index: magick.resize_to_fill!(1024, 1024)
     }
   end
+
+  add_metadata :dimensions do |io|
+    FastImage.size(io)
+  end
 end

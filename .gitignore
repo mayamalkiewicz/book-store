@@ -53,3 +53,6 @@
 !/vendor/.keep
 !/vendor/javascript/.keep
 !/app/assets/builds/.keep
+
+# ignore dump.rdb
+dump.rdb

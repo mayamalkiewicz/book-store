@@ -34,9 +34,9 @@ class BooksResponseService < ApplicationService
       values << @params[:date_of_publication_after]
     end
 
-    unless conditions.empty?
-      @books = @books.where(conditions.join(' AND '), *values)
-    end
+    return if conditions.empty?
+
+    @books = @books.where(conditions.join(' AND '), *values)
   end
 
   def sort_books

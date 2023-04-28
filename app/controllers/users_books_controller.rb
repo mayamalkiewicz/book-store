@@ -4,7 +4,7 @@ class UsersBooksController < ApplicationController
   # POST /users_books
   def create
     book = Book.find(params[:book_id])
-    users_book = current_user.users_books.build(book: book)
+    users_book = current_user.users_books.build(book:)
 
     if users_book.save
       redirect_to book_path(book), notice: 'Book was successfully added to the library.'

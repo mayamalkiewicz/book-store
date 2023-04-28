@@ -35,6 +35,19 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
       assert_redirected_to book_url(Book.last)
     end
 
+    test 'should enqueue ImageWorker job after creating a book' do
+      @params[:deleted] = false
+      @params[:image] = fixture_file_upload('test.jpeg', 'image/jpeg')
+      assert_difference('Book.count') do
+        post books_url,
+             params: { book: @params }
+      end
+
+      assert_redirected_to book_url(Book.last)
+      assert_equal 1, ImageWorker.jobs.size
+      assert_equal [Book.last.id], ImageWorker.jobs.first['args']
+    end
+
     test 'should show book if logged in as admin' do
       get book_url(@book)
       assert_response :success

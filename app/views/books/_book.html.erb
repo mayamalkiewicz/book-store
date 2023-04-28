@@ -22,7 +22,7 @@
       <div class="m-auto mt-28 flex content-center">
         <p class="my-5">
           <strong class="py-1 inline-block w-36 rounded-xl px-5 bg-gray-100 w-36">Image:</strong>
-          <% if book.image_data %>
+          <% if book.image_url(:index).present? %>
             <%= image_tag book.image_url(:index), class: "object-cover h-58 w-36 rounded-lg" %>
           <% else %>
             <%= image_tag("book.jpeg", class: "object-cover h-58 w-36 rounded-lg") %>

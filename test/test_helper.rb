@@ -4,6 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 require 'faker'
+require 'sidekiq/testing'
 
 module ActiveSupport
   class TestCase
@@ -16,6 +17,7 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
     include SessionsHelper
     include FactoryBot::Syntax::Methods
+    include ActiveJob::TestHelper
 
     def log_in(user)
       post sessions_url, params: { session: { email: user.email, password: user.password } }

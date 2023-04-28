@@ -18,6 +18,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
+      ImageWorker.perform_async(@book.id)
       redirect_to book_url(Book.last), notice: 'Book was successfully created.'
     else
       render :new, status: :unprocessable_entity
